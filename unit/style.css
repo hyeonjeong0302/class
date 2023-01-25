@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+:root{
+    /* --(하이픈2개)속성이름:속성값 */
+    --green: #f00;
+    --padding-top10: 10px;
+    --padding-bottom10: 10px;
+}
+/* 가상 클라스로 root를 만드는데 html에 기본 지정된 것보다 힘이 더 세진다. 여기에 있는 것을 바꾸면 이 변수를 지정한 곳의 모든 것이 바뀐다. 
+color: var(--green)여기에 #f00이 지정되는 것이고 위에 지정된 색깔을 바꾸면 다른 곳에도 바뀌는 것이야. */
+
+.전체{
+    font-size: 12em;
+    /* 16px(기본폰트사이즈) * 1.2 = 19px(대략)*/
+}
+
+.전체 .첫째{
+    font-size: 0.5em;
+    /* 부모의 19px을 받아서 그것에 0.5를 곱해 */
+    /* em은 부모의 폰트사이즈에 주어진 숫자를 곱하는거야.  
+    전체에다가 em을 하면 기본폰트가 16px이니까 거기에 또 곱해지는거야. 
+    근데 너무 em 남발하면 복잡하니까 어쩌다 하나정도만 준다 이거야. */
+}
+.전체 .첫째 .첫손{
+    background-color: blue;
+    color: #fff;
+    height: 100vh;
+    /* height: 100vh; 
+    vh(viewport-height)는 뷰포트의 높이*/
+    font-size: 0.3rem;
+    /* r은 root를 말하는 것이다. html에서 root는 html요소를 의미해.
+    html의 기본폰트크기는 16px이므로 16px을 기준으로 계산함. 
+    0.3rem = 16px * 0.3 
+    부모가 얼마든 상관이 없고 html에 설정된 16px의 값을 기준으로 계산함. */
+    /* font-size: 30vw; 
+    폰트크기가 뷰포트의 넓이 */
+    color: var(--green);
+    padding-top: var(--padding-top10);
+    padding-bottom: var(--padding-bottom10);
+}

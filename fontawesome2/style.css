@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.section::after{
+    content: "\f502";
+    /* content: "\f502"; fontawesome홈피에서 개발자 모드를 클릭하고 원하는 아이콘을 클릭해서 i태그 선택해서 가져옴. */
+    /* fontawesome 5버전을 css에서 사용하기 위해서는 font-family,  font-weight가 같이 들어가 있어야 해! */
+    font-family: "Font Awesome 5 Free";
+    /* pro를 free로 바꾸는 경우는 무료버전 사용일 경우. */
+    font-weight: 900;
+}
+
+.wrap2{
+    position: relative;
+    margin-top: 50px;
+    width: 400px;
+    height: 400px;
+    background-color: pink;
+}
+.wrap2 .section2{
+    position: absolute;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    /* transform: translate(-50%, -50%); 
+    얘를 계속 적으면 너무 귀찮아. 모든 상황에 적응하려면 힘들자나. 코드가 중복되면 별루야. 그래서 
+        left: 50% - 50px;
+    top: 50% - 50px; 요래해.
+    그런데 그러면 %와 px의 차이 때문에 인식하지 못할 수 있으니까 
+    calc(); 요걸 해서 해. -는 앞뒤로 띄워.
+    그리고 왜 50px을 빼냐면 width, height 가 100px이니까 50px을 뺀거야. 기억해둬야해. */
+}

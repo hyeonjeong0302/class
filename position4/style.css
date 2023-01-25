@@ -1,0 +1,318 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clear::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.전체 {
+    background-color: #1c82ad;
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 30px 0;
+    /* padding: 30px 0; 양 옆에 파랗게 도출된 것은 패딩이 아니다. 위아래 있는 것만 패딩임. */
+}
+
+.전체 .첫째 {
+    background-color: #cf4dce;
+    width: 900px;
+    margin: 0 auto;
+    /* margin: 0 auto; 요래하면 부모의 영역에서 항상 가운데를 차지함. */
+    padding: 30px;
+    box-sizing: border-box;
+    /* box-sizing: border-box;
+    900px + 30px *2 
+    해서 960이 되는데 이게 900에 다 들어가야 하는데 이렇게 하려면 박스사이즈까지 포함시켜서 계산이 된다. */
+}
+
+.전체 .첫째>div {
+    background-color: #4e6c50;
+    height: 200px;
+    width: 47.5%;
+    /* 
+    width: 47.5%; *2 + margin-right: 5%;
+    해서 100%가 되게.
+    */
+    float: left;
+}
+
+.전체 .첫째 .첫손1 {
+    position: relative;
+    margin-right: 5%;
+    background-image: url(img/img10.jpg);
+    background-size: cover;
+    overflow: hidden;
+    /* overflow: hidden; 는 어떤 일을 하냐? position의 sticky를 줄 때 내 부모 조상 중에 overflow: hidden;이 있으면 스티키 적용이 안 됨. */
+
+}
+
+.전체 .첫째 .첫손1 h4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    /* background-color: rgba(255, 255, 255, 0.3);
+    알파값, 투명도를 주는건데 전체값의 30%만 줘서 투명하게 만드는거얌. 뒤에 0.3이 퍼센트 값.
+    */
+    color: #222;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.전체 .첫째 .첫손1 .right {
+    position: absolute;
+    left: 100%
+        /* right로 하려면 앞에 -붙이면 됨. */
+    ;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(img/img20.jpg);
+    background-size: cover;
+    transition: 0.3s;
+}
+
+.전체 .첫째 .첫손1:hover .right {
+    left: 0;
+}
+
+/* 왜 상이 위로 올라가냐? 
+.전체 .첫째 .첫손1에 적용된 내용보다 그 뒤에 나온
+.전체 .첫째 .첫손1 .right의 값이 더 힘이 세기 때문이다. 
+그래서 진주가 나문희를 덮은 것. 
+*/
+
+.전체 .첫째 .첫손2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.전체 .첫째 .첫손2 video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    /* width: 120%;
+    100%하면 약간 위에 검은거 나오니까 120%해서 그걸 없애도 좋아. */
+}
+
+.전체 .둘째 {
+    background-color: #ff7b54;
+    width: 900px;
+    margin: 30px auto;
+    /* margin: 0 auto;
+    이거 계속 까먹네. 매우 중요! 가운데!!!  */
+    padding: 30px;
+    box-sizing: border-box;
+    /* 900 안에 패딩 30도 있고 너비 900도 들어가...? 물리적으로 가능?ㅋㅋㅋ */
+}
+
+/* .전체 .둘째>div 는 둘째의 각각의 디브 */
+.전체 .둘째>div {
+    background-color: #938b62;
+    width: 23.5%;
+    float: left;
+    margin-right: 2%;
+    height: 200px;
+    position: relative;
+}
+
+.전체 .둘째>div:last-child {}
+
+.전체 .둘째>div.둘자4 {
+    margin-right: 0;
+}
+
+/* .전체 .둘째>div:last-child해도 됨. */
+
+/* .전체 .둘째>div>div 는 둘째의 각각의 디브의 각각의 디브 */
+.전체 .둘째>div>div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #cf4dce;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.전체 .둘째>div>div.둘손2 {
+    transform: none;
+    left: auto;
+    right: 0;
+    /* right: 0; 만 했을 때 실행 안되는 이유, 위에 left50% 해놓고 밑에 요래 하면, 왼쪽이 오른쪽보다 힘이 세. 코드 자체가 왼쪽이 오른쪽보다 힘이 세. 그래서 래프트를 오토로 하고 롸이트 0 주면 됨. 그리고 top가 bottom보다 힘이 세. 이것도 오토로 해놓으면 풀어짐. */
+    top: auto;
+    bottom: 0;
+}
+
+.전체 .둘째>div>div.둘손3 {
+    transform: none;
+    left: auto;
+    right: 0;
+    top: 0;
+}
+
+.전체 .둘째>div>div.둘손4 {
+    transform: none;
+    left: 0;
+    top: auto;
+    bottom: 0;
+}
+
+.전체 .셋째 {
+    width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: chartreuse;
+}
+
+.전체 .셋째>div {
+    background-color: rgb(218, 31, 62);
+    width: 45%;
+    float: left;
+    height: 200px;
+}
+
+.전체 .셋째>div.세자1 {
+    position: relative;
+    margin-right: 10%;
+    overflow: hidden;
+}
+
+.전체 .셋째>div.세자1>div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*  html에 세손2(하)가 세손1(상)보다 늦게 쓰여졌기 때문에 더 위에 떠. 그걸 하가 상보다 위에 오게 하려면 z-index 1 이상의 값을 주면 됨. */
+.전체 .셋째>div.세자1>div h4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 40px;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.전체 .셋째>div.세자1>div.세손1 {
+    background-image: url(img/img10.jpg);
+    background-size: cover;
+    z-index: 3;
+    left: 100%;
+    /* left: 100%; 여기 넘치는 것을 저 위에 세자1에 가서
+    overflow: hidden; 을 준다. */
+    transition: 0.3s;
+}
+
+.전체 .셋째>div.세자1:hover>div.세손1 {
+    left: 0;
+}
+
+.전체 .셋째>div.세자1>div.세손2 {
+    background-image: url(img/img20.jpg);
+    background-size: cover;
+}
+
+.전체 .셋째>div.세자2 {
+    position: relative;
+}
+
+.전체 .셋째>div.세자2 video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    overflow: hidden;
+}
+
+.전체 .넷째 {
+    width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: yellowgreen;
+
+}
+
+.전체 .넷째>div {
+    background-color: blueviolet;
+    height: 200px;
+    width: 45%;
+    float: left;
+
+}
+
+.전체 .넷째>div.네자1 {
+    position: relative;
+    margin-right: 10%;
+    overflow: hidden;
+
+}
+
+.전체 .넷째>div.네자1>div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.전체 .넷째>div.네자1>div h4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 40px;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.전체 .넷째>div.네자1>div.네손1 {
+    background-image: url(img/img10.jpg);
+    background-size: cover;
+    z-index: 3;
+    left: 100%;
+    transition: 0.3s;
+}
+
+.전체 .넷째>div.네자1:hover>div.네손1 {
+    left: 0;
+}
+
+.전체 .넷째>div.네자1>div.네손2 {
+    background-image: url(img/img20.jpg);
+    background-size: cover;
+}
+
+.전체 .넷째 .네자2{
+    position: relative;
+}
+.전체 .넷째 .네자2 video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    overflow: hidden;
+}
