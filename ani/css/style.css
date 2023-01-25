@@ -1,0 +1,279 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap');
+/*
+<style> @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap'); </style>
+여기서 앞뒤 스타일 빼고 넣어라! */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightgray;
+}
+
+.box1 {
+    background-color: #fff;
+    margin-top: 100px;
+}
+
+.box1 .child {
+    width: 300px;
+    background-color: orange;
+    margin: 0 auto;
+    padding: 30px 0;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20px;
+    border: 10px solid orange;
+    /* 
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-delay: 0.5s;
+    transition-timing-function: ease; 
+    */
+    /* 위의 transition들을 모아서 그냥 transition으로 */
+    /*transition: background-color 0.3s 0.5s ease;*/
+    /* 시간이 두 개 있으면 뒤에 있는 것이 delay 값이야. 0.3s, 0.5s 이런 애들을 ease 뒤에 적어도 됨. */
+    /* transform: 0.4s 0.8s ease; */
+    transition: 0.3s;
+    /* transition: 0.3s 0.2s ease; 
+    0.2s ease 빼도 넣어도 똑같다. */
+    /* transition: all 0.3s 0.2s ease; 
+    all을 빼도 넣어도 똑같다. */
+}
+
+.box1:hover .child {
+    background-color: rgb(148, 15, 15);
+    transform: translateY(-30px);
+    /* hover 하면 Y축 위로 좀 움직여*/
+}
+
+.box2 {
+    font-family: 'Noto Sans KR', sans-serif;
+    /* 삐침이 있는 폰트는 가독성이 떨어져. sans-serif를 넣으면 원하는 폰트가 도출되지 않을 경우 대체로 삐침이 사라진 글자가 도출돼.*/
+    width: 400px;
+    font-weight: 500;
+    margin: 50px auto 0;
+    background-color: rgb(71, 142, 201);
+    color: #222;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden;
+}
+
+.box2 p {
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
+
+.box2 p.one {
+    transition: 0.3s;
+}
+
+.box2 p.two {
+    transition: 0.6s;
+}
+
+.box2 p.three {
+    transition: 0.9s;
+}
+
+.box2:hover p {
+    transform: translateX(0%);
+
+}
+
+.box3 {
+    background-color: rgb(138, 214, 108);
+    font-size: 30px;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    /* 행간100 */
+    margin-top: 50px;
+    /* 애니메이션의 이름, keyframes의 이름과 반드시 동일 */
+    animation-name: box_ani;
+    /* 애니메이션의 지속시간, s는 second */
+    animation-duration: 2s;
+    /* 애니메이션의 반복 횟수, infinite는 무한반복 */
+    animation-iteration-count: 3;
+    /* animation-direction 애니메이션의 방향
+    기본값은 normal 
+    alternate는 정->역->정(오왼오)으로 이동 
+    alternate-reverse는 역->정->역(왼오왼)으로 이동
+    reverse는 위치의 시작이 거꾸로(normal의 반대) */
+    animation-direction: normal;
+    /* animation-delay: 3s; 애니메이션 지연시간, 3초 이따가 애니메이션 시작돼. */
+    animation-delay: 3s;
+    /* animation-timing-function는 애니메이션의 가속도
+    liner 쓰면 처음부터 끝까지 일정한 속도로 움직여*/
+    animation-timing-function: linear;
+    /* 애니메이션의 처음과 끝의 상태
+    forwards는 애니메이션이 끝난 상태에서 멈춤
+    backwards는 keyframes의 0%인 상태부터 시작
+    both: forwards+backwards
+    */
+    animation-fill-mode: both;
+
+}
+
+
+@keyframes box_ani {
+
+    /* 시작지점 */
+    from
+
+    /* 0%로 쓸 수 있어. 그런데 시작지점이 0%가 아니면 from을 쓸 수 없어. */
+        {
+        margin-left: 100px;
+    }
+
+    /* left가 있으려면 position이 있어야 해. transform: translateX, margin-left 이런거 있어도 됨. */
+
+    /* 도착지점 */
+    to
+
+    /*  100%로 쓸 수 있어. 도착지점이 100%가 아니면 to를 쓸 수 없어.*/
+        {
+        margin-left: 400px;
+    }
+}
+
+.box4 {
+    margin: 100px 0 400px;
+    font-size: 30px;
+    text-align: center;
+    width: 100px;
+    width: 100px;
+    line-height: 100px;
+    background-color: rgb(230, 103, 103);
+    color: rgb(216, 214, 243);
+   /*
+    animation-name: box_ani2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    */
+    /*
+        animation: name duration timing-function delay iteration-count direction fill-mode;
+        위에 복잡한 것을 이렇게 하면 똑같이 도출된다.*/
+    animation: box_ani2 4s ease-in-out 1s infinite normal both;
+/*normal은 안 써도 됨 */
+}
+
+@keyframes box_ani2 {
+    0% {
+        transform: translate(100px, 0);
+    }
+
+    25% {
+        transform: translate(300px, );
+    }
+
+    50% {
+        transform: translate(300px, 200px);
+        /* 왜인지는 모르겠지만 Y축에 주어진 값이 양수일 때, Y축이 아래쪽으로 간다. */
+    }
+
+    75% {
+        transform: translate(100px, 200px);
+    }
+
+    100% {
+        transform: translate(100px, 0);
+    }
+}
+
+.약::after{
+    content: "";
+    clear: both;
+    display: block;
+
+}
+.box5{
+    width: 1000px;
+    background-color: yellowgreen;
+    padding: 20px;
+    margin: 0  auto;
+    /* 원근감 설정할 때는 카메라(perspective)가 있어야 해. */
+    perspective: 600px;
+}
+
+.box5>div{
+    background-color: rgb(235, 140, 211);
+    float: left;
+    width: 49%;
+    height: 300px;
+}
+
+.box5>div.child_1{
+    margin-right: 2%;
+    position: relative;/*포지션 릴레이티브를 빼면 윈도우 제일 위로 붙어*/
+    transform-style: preserve-3d;/* 지금부터 쓰리디로 만들겠다. 이걸 빼도 쓰리디 실행은 되는데 w3c에서 쓰라고 권장. 쓰자!! */
+    
+}
+/*박스5의 디브는 바로 자식만 해당. 손자는 아니야. 차일드1,2만 되고 로탑은 엑스*/
+
+.box5>div.child_1 .ro{
+    padding: 20px 30px;
+    font-size: 40px;
+    color: cornsilk;
+    background-color: rgb(184, 109, 235);
+    position: absolute;
+    left: 55%; top: 35%;
+    transform: rotateY(0deg);/* deg는 degree의 약자로 각도를 말함 
+    Y로 잡으면 Y를 축으로 놓는 것이라서 Y가 중심에 있고 양옆으로 회전한다. */
+    transform: translateZ(300px) rotateY(45deg);
+    transform-origin: left center;/* 왼쪽에 축이 잡히고 왼쪽을 기준으로 회전 */
+}
+
+.box5>div.child_2{
+    position: relative;
+   perspective: 600px;
+}
+
+.box5>div.child_2 .top{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: #222;
+    transform-style: preserve-3d;/* 중간단계에도 얘를 줘야해. 상위에도 주고. 그래야 입체적으로 바뀜. */
+}
+.box5>div.child_2 .top div{
+    transform: translateY(100%) rotateX(-80deg);
+    /* translateY(100%)은 내 몸의 100프로만큼 밑에 있다가 위로 올라온다 이런 말이지. */
+    transform-origin: center top;
+    transition: 0.8s cubic-bezier(0.1, 0.16, 0.1, 1.29);
+    opacity: 0;
+}
+
+.box5>div.child_2:hover .top div{
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.2s;/* 0.2초 후에 고개를 삭 들어. */
+    /* .box5>div.child_2 .top div{
+        transform: translateZ(100px) rotateX(-80deg); 여기에 대한 none이야. */
+}
+
+.box5>div.child_2:hover .top div:first-child{}
+/* 얘는 탑의 자식 중 첫 번째 자식(div)인 영어홍길동을 부르는 것 */
+
+.box5>div.child_2:hover .top div:last-child{
+    transition-delay: 0.4s;/* 한글홍길동이 0.4s 늦게 고개를 들어. */
+}
+/* 얘는 탑의 자식 중 두 번째 자식(div)인 한글홍길동을 부르는 것 */
+
+.box5>div.child_3 {}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부모자식관계</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /*
+    m0 tab, p0 tab 하면 margin: 0;, padding: 0;으로 됨
+    */
+    /*
+    부모는 자식의 높이를 따라감
+    자식은 부모의 넓이를 따라감(넓이는 기본이 100%)
+    자식은 부모의 패딩에 침범 못 해. 
+    */
+    /*
+    정렬의 기본값은 왼쪽, 가운데 정렬을 하고 싶다면  margin: auto;
+    텍스트 가운데 정렬 text-align: center; 
+    */
+    .전체 {
+      width: 600px;
+      /* width는 넓이값 */
+      background-color: aqua;
+      margin: auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .전체 {
+      border: red solid 2px;
+    }
+
+    .전체 {
+      background-color: green;
+    }
+
+    /*
+    경로가 같을 때는 아래쪽에 적은 것이 적용된다.
+    background-color를 위에 쓴 것보다 밑에 쓴 것이 우선적으로 적용
+    */
+    .전체 .첫째 {
+      background-color: pink;
+    }
+
+    .전체 .둘째 {
+      background-color: cornflowerblue;
+      padding: 20px;
+    }
+
+    .전체 .둘째 .둘자1 {
+      float: right;
+      width: 33.3333%;
+      /*33.3333%는 부모 넓이의 3분의1씩 차지하게 함
+      33.3333%를 한 이유!
+      33.33333333333333%해도 네개까지만 적용됨*/
+      background-color: darkgoldenrod;
+    }
+
+    .전체 .둘째 .둘자2 {
+      float: right;
+      width: 33.3333%;
+      background-color: crimson;
+    }
+
+    .전체 .둘째 .둘자3 {
+      float: right;
+      width: 33.3333%;
+      background-color: darkslateblue;
+    }
+
+    .전체 .둘째 .효자 {
+      /* 부모의 영역깨짐을 방지하기 위해
+     자식이 float를 쓰면 부모가 자식을 인식하지 못해 그러면 영역이 깨지게 되는데 그 것을 방지하기 위해 clear: left; 함
+     자식이 float을 right로 하면 또 요기 clear: right; 로 바꿔야 영역이 깨지지 않아
+     clear를 both로 하면 어느 쪽이든 상관 없이 안 깨짐*/
+      clear: both;
+    }
+
+    /*after앞에 :: 두개인 이유는 최신? 모르겠으면 그냥 두 개 적어*/
+    .전체 .셋째::after{
+      content: "";
+      clear: both;
+      display: block;
+      /*클리어보스는 블록요소에서만 효능이 발휘됨
+      :before, :after는 인라인요소임 */
+    }
+
+    .전체 .셋째 {
+      background-color: brown;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    .전체 .셋째 .세자1 {
+      background-color: darkblue;
+      float: left;
+      width: 50%;
+    }
+
+    .전체 .셋째 .세자1 span {
+      width: 100px;
+      background-color: coral;
+    }
+
+    .전체 .셋째 .세자1 span::before {
+      /* CSS에서 공간을 만들 수 있다*/
+      content: "앞";
+      width: 50%;
+    }
+
+    .전체 .셋째 .세자1 span::after {
+      content: "뒤";
+    }
+
+    .전체 .셋째 .세자2 {
+      background-color: yellow;
+    }
+
+    .전체 .셋째 .세자2 span {
+      background-color: crimson;
+    }
+
+    /*
+    자식은 부모의 width를 따라가기 때문에 부모가 600px이면 자식을 200px 해도 한 줄에 안돼*/
+  </style>
+</head>
+
+<body>
+  <div class="전체">
+    <div class="첫째">첫째</div><!-- //첫째 -->
+    <div class="둘째">
+      <div class="둘자 둘자1">둘째자식1</div>
+      <div class="둘자 둘자2">둘째자식2</div>
+      <div class="둘자 둘자3">둘째자식3</div>
+      <div class="효자"></div>
+    </div><!-- //둘째 -->
+    <div class="셋째">
+      <div class="세자 세자1"><span>셋째</span>자식1</div>
+      <div class="세자 세자2"><span>셋째</span>자식2</div>
+    </div><!-- //셋째 -->
+  </div> <!-- //전체 -->
+  <!-- 각각 카테고리? 마무리 될 때마다 각주에 //뿅뿅 넣어서 표시한다.-->
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.치료::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* float를 쓰면 부모가 깨지는데 그게 깨지면 막내(.치료::after{content: ""; clear: both; display: block;})를 만들어서 치료를 해야해. 그러고나서 html가서 박첫째 클레스명에 치료를 적어 그러면 치료됨
+<div class="박첫째 치료"> 요로케*/
+.박일수 {
+    background-color: #ECA869;
+    width: 1000px;
+    /* margin-right: auto;
+margin-left: auto; */
+    margin: 0 auto;
+    /* 상하만 0 좌우는 오토를 주겠다*/
+
+    padding: 20px;
+    /* //상하좌우 20px */
+    padding: 20px 40px;
+    /* //상하20 좌우40 */
+    padding: 20px 40px 50px;
+    /* //상20 좌우40 하50*/
+    padding: 10px 20px 30px 40px;
+    /* 상 오른쪽 아래 왼쪽 시계방향으로 돌아요~
+그리고 위에 패딩 여러개 적어도 결국 마지막에 적은 10 20 30 40이 적용됨 */
+}
+
+.박일수 .박첫째 {
+    background-color: #C0EEE4;
+    padding: 20px;
+}
+
+.박일수 .박첫째 .자식 {
+    width: 49%;
+    height: 200px;
+    float: left;
+}
+
+.박일수 .박첫째 .자식.첫째자식1 {
+    background-color: #939B62;
+    margin-right: 2%;
+    /* 첫째1,첫째2 모두 마진을 50%를 가지고 있는데 2%를 주면 102%니까 밑으로 떨어짐, 49%로 바꾸면 한줄에 나와. 두개 합해서 100%가 되면 된당
+     */
+    padding: 20px;
+    border: 5px solid orange;
+    box-sizing: border-box;
+    /*  
+     box-sizing: border-box; 
+     width + padding + border 를 영역 안으로 포함(패딩을 20을 주면 좀 이상해지는데 박스사이징 보더박스 하면 안으로 쏙 들어옴)*/
+}
+
+.박일수 .박첫째 .자식.첫째자식2 {
+    background-color: #FFFBAC;
+}
+
+.박일수 .박첫째 .자식.첫째자식2 object {
+    width: 100%;
+    height: 100%;
+}
+
+.박일수 .박둘째 {
+    background-color: #FFCAC8;
+    padding: 20px;
+    margin-top: 30px;
+    /* 두개 같은 결과 margin: 30px 0 0;*/
+}
+
+/* 
+띄어쓰기는 자손, 
+>는 직계자식
+*/
+.박일수 .박둘째>div {
+    background-color: #B08BBB;
+    width: 23.5%;
+    float: left;
+    height: 100px;
+    margin-right: 2%;
+}
+
+.박일수 .박둘째>div.둘자식1 {
+    background-image: url(img.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    /*사진반복 싫으면 요래, 안그러면 반복됨*/
+    background-position: 100px 40px;
+    /* x축100 y축40*/
+    transition: 0.3s;
+}
+
+.박일수 .박둘째>div.둘자식1:hover {
+    background-size: 100px;
+    background-position: center center;
+}
+
+.박일수 .박둘째>div.둘자식2 {
+    background: #ECA869 url(img3.png) no-repeat 100px 40px;
+    background-size: 20px;
+    transition: 0.3s;
+    /*hover시간 부드럽게 바뀜
+    왜 hover를 여기에 주냐! 얘를 밑에 hover에 주면 마우스 올릴 때는 부드럽지만 뗄 때는 확! 되니까 여기다 주면 둘 다 부드럽게 됨*/
+}
+
+.박일수 .박둘째>div.둘자식2:hover {
+    background-image: url(img4.png);
+    /*:hover를 하면 마우스 올릴 때 사진이 바뀌게 할 수 있어!*/
+}
+
+.박일수 .박둘째>div.둘자식3 {
+    overflow: hidden;
+    /*내 영역보다 넘치는 부분을 숨김*/
+
+}
+
+.박일수 .박둘째>div.둘자식3 iframe {
+    width: 100%;
+    /*요렇게 해도 크기가 100%가 아니고 넘치면 안되면 html가서 iframe에 있는 width height 지워버리삼*/
+}
+
+.박일수 .박둘째>div.둘자식4 {
+    margin-right: 0;
+    overflow: hidden;
+    /*
+     .박일수 .박둘째>div{
+    background-color: #B08BBB;
+width: 23.5%;
+float:left;
+height: 100px;
+margin-right: 2%;
+} 요래하면 102%가 되는데 
+.박일수 .박둘째>div.둘자식4{
+    margin-right: 0;
+    더하면 제대로 뜸
+*/
+}
+
+.박일수 .박둘째>div.둘자식4 iframe {
+    width: 100%;
+}
+
+.박일수 .박세째 {
+    background-color: #a5e5b8;
+    margin-top: 30px;
+    padding: 20px;
+    color: white;/* 이 컬러는 글자에 주는거야. 인라인 요소에, 글자에 적용되는 것은 대부분 자손에게 상속이 된다ㅋㅋㅋ */
+    font-size: 20px;
+    text-align: center; 
+    line-height: 200px;/*행간: 글자와 글자 사이가 아니라 글자와 위아래 나만의 공간을 포함한 간격*/
+}
+
+.박일수 .박세째>div {
+    background-color: violet;
+    width: 32%;
+    margin-right: 2%;
+    height: 200px;
+    float: left;
+}
+
+.박일수 .박세째>div.세자식1 {}
+
+.박일수 .박세째>div.세자식2 {}
+
+.박일수 .박세째>div.세자식3 {
+    margin-right: 0;
+}

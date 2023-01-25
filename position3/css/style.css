@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    top: 0;
+}
+/*내가 예측하지 못한 안쪽, 위쪽 공간을 없애라! 라는 말이여.*/
+ul, ol, li{list-style: none;}/* 요래 하면 스타일 요소들이 다 빠져. 리셋이야!*/
+.clear::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#전체 {
+    background-color: coral;
+    padding: 20px;
+    width: 800px;
+    margin: auto;
+
+}
+
+#전체 .첫째자식 {
+    background-color: chartreuse;
+    padding: 20px;
+
+    /* 다른 것의 영향을 주지 않고 자식에게 위치만 잡아주는 것이여. 자식은 부모의 영역을 침범할 수 없지만 첫손2는 앱솔루트 되었기 때문에 부모의 꼭지를 잡을 수 있어(m0, t0일 경우).*/
+}
+
+
+#전체 .첫째자식 .첫째손자 {
+    background-color: darkmagenta;
+    height: 200px;
+    background-image: url(../img/img1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#전체 .첫째자식 .wrap {
+    position: relative;
+}
+
+#전체 .첫째자식 .첫손2 {
+    opacity: 0;
+    /* 투명도를 0으로 하면 첫째손자1만 보여 */
+    background-color: green;
+    position: absolute;
+    /* 얘가 첫째손자1 밑으로 가는거야. 있긴한데 없다... 첫손2가 죽어서 없는데 영혼만 있어...* 첫손2가 absolute 되었다고해서 형제에게 매달릴 순 없어. 반드시 조상이 잡아줄 수 있어. */
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: 0.3s;
+    background-image: url(../img/img2.jpg);
+}
+
+#전체 .첫째자식:hover .첫손2 {
+    opacity: 1;
+}
+
+#전체 .둘째자식 {
+    margin-top: 30px;
+    padding: 20px;
+    height: 200px;
+    background-color: lawngreen;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#전체 .둘째자식 .둘째손자 {
+    background-color: indigo;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* 나의 부모로부터 l0 t0을 하겠다 이거여.
+    right:0; bottom: 0;도 그냥은 성립해, 부모 전체를 다 덮는 것이지. 그런데 넓이를 지정하면 실행되지 않을 수가 있어. 왜냐면 위아래양옆 다 공간을 지정했는데 너비 높이까지 지정해놓으면 그게 충돌될 수 있자나. 그런데 이 경우 right:0; bottom: 0;을 해놔도 그것은 아예 실행이 안되고 취소가 된다.*/
+    /* width: 100%;
+    너비는 이건 안 적어도 기본값이여. block요소라서*/
+    /* 자식은 부모의 패딩에 침범하지 못한다. */
+    width: 200px;
+    height: 100px;
+}
+
+#전체 .둘째자식 {
+    margin-bottom: 50px;
+}
+
+/* 위에 둘째자식이 있지만 밑에 또 적으면 충돌되지 않는 한 합병된다. 위 아래 내용이 충돌되면 밑에 적은 내용으로 덮어 써진다.*/
+
+#전체 .셋째자식 {
+    background-color: rgb(91, 231, 231);
+    margin-top: 30px;
+    /* 둘째자식에게는 margin-bottom: 50px;, 셋째자식에게는 위 마진30 주면 80이 되는 것이 아니라 둘 중 큰 값인 50이 적용된다. 
+    양 옆의 마진은 더해져. 30 30이면 60이 된다. */
+
+}
+
+#전체 .셋째자식>div {
+    background-color: rgb(238, 164, 68);
+    width: 40%;
+    margin: 0 5%;
+    float: left;
+}
+
+#전체 .셋째자식>div ol {
+    list-style-type: upper-roman;
+    /* 이거는 딱 타입만, type을 안 고 list-style만 쓰면 좀 더 큰 느낌으로 지정 가능*/
+}
+
+#전체 .셋째자식>div ul {
+    list-style: square;
+}
+/* ol, ul의 자식요소는 li만 가능해. p태그 등을 적는다고 구현되지 않는 것은 아니지만 그렇게 하는거 아냐.*/
+
+#전체 .셋째자식>div li{
+    border: 1px solid gray;
+}
+
+#전체 .넷째자식{
+    background-color: rgb(228, 96, 96);
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#전체 .넷째자식 .넷째손자{
+    background-color: rgb(174, 98, 245);
+}
+
+#전체 .넷째자식 .넷째손자 dt{
+    background-color: rgb(72, 207, 224);
+}
+#전체 .넷째자식 .넷째손자 dd{
+    background-color: rgb(218, 238, 108);
+}
+

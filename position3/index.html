@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/position3/css/style.css">
+</head>
+
+<body>
+    <div id="전체">
+        <!-- id는 #이여. id에 class와 같이 '첫째손자 첫손1' 이렇게 이름 두 개 넣으면 안 안돼. '전체' 이렇게 하나만 가능.
+        class가 아니라 id라고 잡으면 절대로 id값의 이름이 중복되면 안돼. id의 이름은 엄마, class의 이름은 여자 라고 보면 돼. 우리 집에 여자는 여럿이지만 엄마는 1명-->
+        <div class="첫째자식">
+            <div class="wrap">
+                <div class="첫째손자 첫손1">첫째손자1</div>
+                <div class="첫째손자 첫손2">첫째손자2</div>
+            </div>
+
+        </div>
+        <div class="둘째자식">
+            <div class="둘째손자">둘째손자</div>
+
+        </div>
+        <div class="셋째자식 clear">
+            <div class="셋째손자1">
+                <h4>정렬하는 요소들(순서가 있는 list)</h4>
+                <ol>
+                    <li>Coffee</li>
+                    <li>Tea</li>
+                    <li>Juice</li>
+                </ol>
+                <!-- ol태그는 자동으로 번호가 부여된다. -->
+            </div>
+            <div class="셋째손자2">
+                <h4>정렬하는 요소들(순서가 없는 list)</h4>
+                <ul>
+                    <li>Coffee</li>
+                    <li>Tea</li>
+                    <li>Milk</li>
+                </ul>
+                <!-- ul태그는 번호가 부여되지 않아.-->
+                <!-- w3school가서 list style type 요래 쳐서 맨 밑에 데모 해봐.-->
+            </div>
+        </div>
+        <div class="넷째자식">
+            <div class="넷째손자">
+                <!-- description list-->
+                <dl>
+                    <dt>커피</dt>
+                    <dd>검정색의 쓴맛의 액체</dd>
+                    <dt>사과</dt>
+                    <dd>초겨울에 생산되는 맛있는 과일</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

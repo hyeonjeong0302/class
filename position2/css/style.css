@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.치료::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.전체 {
+    color: red;
+    width: 1000px;
+    margin: 0 auto;
+    /*정중앙에위치, 0은 뭔지 다시 찾아보자*/
+    padding: 20px;
+    margin-top: 30px;
+    background-color: gray;
+    height: 600px;
+}
+
+.전체 .첫째 {
+    background-color: #39B5E0;
+    padding: 20px;
+}
+
+.전체 .첫째 .첫자 {
+    background-color: #A31ACB;
+    width: 32%;
+    height: 200px;
+    float: left;
+    margin-right: 2%;
+}
+
+.전체 .첫째 .첫자.첫자1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.전체 .첫째 .첫자.첫자1 .하 {
+    position: relative;
+    background-image: url(../image/img1.jpg);
+    height: 100%;
+    /*자식은 부모의 넓이만 따라가, 높이는 따로, 요래하면 부모의 높이를 100% 따라가게 됨.*/
+    background-size: cover;
+    background-position: center center;
+    /* 사진이 오른쪽만 잘리면 이상하니까 중앙에 놓고 양쪽이 조금씩 잘림. 센터센터 적어도 되는데 두개가 같은 말이니까 센터 하나만 적어도 됨.
+    background-position: center: */
+    /* 
+    cover: 1차적으로 넓이를 맞추고 나서 밑이 좀 비면 옆으로 늘어뜨려서 아래도 맞춤, 사진이 많이 안 보일 수 있다. 사진 한 장으로 무슨 수를 써서라도 영역을 채우는 것이다. 사진이 옆으로 긴 경우 비율을 그대로 유지하기 때문에 오른쪽이 조금 잘릴 수 있음. 사진이 밑으로 긴 경우 비율을 그대로 유지하기 때문에 밑쪽이 조금 잘릴 수 있다. 
+    contain: 
+    */
+}
+
+/* 상위를 불러야 하니까 ../를 하고 그러면 부를 수 있는 애들이 떠요. 그냥 /는 하위요소를 부르는 것. */
+
+.전체 .첫째 .첫자.첫자1 .하 h4 {
+    position: absolute;
+    /* absolute는 부모에 붙는다. 그런데 부모에 포지션 값이 없으면 위로 위로 올라가서 포지션 있을 때까지 조상을 찾고, 그래도 없으면 바디에 붙어. 그래서 윈도우에 붙어버리니까 상위에 position: relative;를 해서 위치를 설정해줘. */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* 내 몸을 인식하는 것이다. 내 몸의 반만큼 왼쪽, 내 몸의 반만큼 위로 가서 결론적으로 영역의 중앙에 위치하게 됨. */
+}
+
+.전체 .첫째 .첫자.첫자1 .상 {
+    position: absolute;
+    /*  position: absolute; -> 자식의 공간만 차지하게 됨.
+    넓이 다시 설정함. */
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(../image/img2.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.전체 .첫째 .첫자.첫자1:hover .상 {
+    left: 0;
+}
+
+.전체 .첫째 .첫자.첫자1 .상 h4 {
+    position: absolute;
+    /* 붕 뜨면서 다른 영역에 영향을 주지 않게 하려면 absolute를 꼭 해야해. 중요하당. */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 태그 이름에는 .붙이지 말어!!!
+h4는 태그니까 */
+
+
+
+
+.전체 .첫째 .첫자.첫자2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.전체 .첫째 .첫자.첫자2>div {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.전체 .첫째 .첫자.첫자2>div h4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.전체 .첫째 .첫자.첫자2 .상 {
+    background-image: url(../image/img3.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    /* z인덱스는 포지션이 있어야 사용 가능한데  relative, absolute, fixed일 때 사용 가능 */
+    top: -100%;
+    /* top: -100%; 요래하면 애니메이션이 위에서 아래로 오고  top: 100%;로 하면 애니메이션이 밑에서 위로 온다. */
+    transition: 0.3s;
+    /* 애니매이션이 되는데 가장 짧은 시간, 너무 길면 지루해 */
+}
+
+.전체 .첫째 .첫자.첫자2:hover .상 {
+    top: 0;
+}
+
+.전체 .첫째 .첫자.첫자2 .상 h4 {}
+
+.전체 .첫째 .첫자.첫자2 .하 {
+    background-image: url(../image/img4.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.전체 .첫째 .첫자.첫자2 .하 h4 {}
+
+.전체 .첫째 .첫자.첫자3 {
+    margin: 0;
+    position: relative;
+}
+
+.전체 .첫째 .첫자.첫자3>div {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* bsolute를 하면 사진이 잘리는데 요렇게 하면 제대로 떠 */
+}
+
+.전체 .첫째 .첫자.첫자3>div h4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.전체 .첫째 .첫자.첫자3 .상 {
+    background-image: url(../image/img5.jpg);
+    z-index: 10;
+    /* 이걸 하면 상이 올라옴.1보다 많은 수를 주면 됨. 밑에 있는 애보다 값이 높으면 위로 올라온다. */
+    transform: scale(0.3);/* 크기 */
+    /**/
+    opacity: 0;
+    transition: 0.3s;
+    transition-timing-function: ease;}
+
+.전체 .첫째 .첫자.첫자3:hover .상 {
+   opacity: 1;
+    /* 투명도가 0이 됨(안보이게 한다.) 모르겠으면 0.5로 바꿔봐.*/
+    transform: scale(1);
+    border-radius: 50%;/* 50% 하면 원모양으로 바뀌어. 10px 등으로 해도 됨.*/
+}/* 이게 와 오류가 났노*/
+
+.전체 .첫째 .첫자.첫자3 .하 {
+    background-image: url(../image/img6.jpg);
+}
+
+.전체 .둘째 {
+    background-color: green;
+    width: 30%;
+    /* 
+    %의 기준
+    width: 부모(전체)의 넓이
+    */
+    /*
+    height: 부모(전체)의 높이. 단, 부모가 높이값이 있어야 한다.
+    */
+    height: 30%;
+    padding: 5%;
+    margin-top: 5%;/* 패딩 마진탑에 5%를 준 것이 값이 같음...? 
+    패딩 또는 마진은 상하좌우 모두 부모의 넓이를 기준으로 한다.*/
+}/* 이게 왜 적용이 안되지? 초로색 배경이 안됨. 위에 중괄호가 없었음.*/

@@ -1,0 +1,95 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    top: 0;
+}
+
+ul, li{
+    list-style: none;
+}/*html의 script에 있는 dots: true,를 실행했을 때 나오는 점이 사라짐. 점이 왜 나오냐. 개발자 모드에서 눌러보면 li 태그의 ul태그로 나옴. ul태그는 넘버링 대신 점이 찍힘. li는 블록요소라 한 줄에 하나씩 나와. 그걸 한줄에 세개를 다 나오게 하는 방법을 알아보자. */
+
+.wrap{}
+.wrap .container{
+    width: 800px;
+    margin: 0 auto;
+}
+.wrap .container .slick .slick-slide{
+    height: 200px;
+} 
+/* slick의 조상들을 꾸며야지 slick을 직접 꾸미려 하면 난리가 나. */
+/* .wrap .container .slick{
+    height: 200px; 요렇게까지 했을 때는 높이가 적용되지 않았는데 .wrap .container .slick .slick-slide{
+    height: 200px;} 하니까 높이가 생김. */
+
+.wrap .container .slick .slick-slide img{
+    width: 100%;
+}
+
+.wrap .container .slick .slick-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0;/*font-size: 0;하면 prev, next button 없어지고 흔적이 남아. 그 때 visibility: hidden; 하면 흔적도 없어짐.*/
+    visibility: hidden;
+}
+/*slick의 button을 prev, next가 아니라 다른 것으로 바꾸는 것. */
+.wrap .container .slick .slick-prev{
+    z-index: 10;
+    left: 10%;
+    
+}
+
+.wrap .container .slick .slick-prev::after{
+content: "\f0a5";
+font-family: "Font Awesome 5 Free";
+font-weight: 300;/* 900 막 이렇게 두껍게하면 다 채워진 느낌 줄 수 있넹. */
+/* font-family랑 font-weight 다 적어줘야 해. */
+visibility: visible;
+font-size: 48px;
+color: rgb(166, 100, 228);
+}
+
+.wrap .container .slick .slick-next{
+    right: 10%;
+}
+/* z-index 없으면 prev 버튼이 안보여. z-index 줘서 버튼을 올리고 next button을 오른쪽으로 붙이면 다 떠*/
+
+.wrap .container .slick .slick-next::after{
+ content: "\f0a4";
+font-family: "Font Awesome 5 Free";
+font-weight: 300;
+visibility: visible;
+font-size: 48px;
+color: rgb(166, 100, 228);
+}
+
+.wrap .container .slick .slick-dots{
+    text-align: center;
+
+}
+.wrap .container .slick .slick-dots li{
+    display: inline;
+    /* li는 블록요소인데 이걸 쓰면 한 줄에 나와. 인라인요소로 바뀜. */
+    margin: 0 5px;
+    /* inline요소는 padding과 margin의 좌우는 적용되나 상하는 적용 안 됨. */
+}
+.wrap .container .slick .slick-dots li button{
+    font-size: 0;  
+    border: none;
+    width: 13px;
+    height: 13px;
+    background-color: #888;
+    border-radius: 50%;/*원이됨.*/
+    transition: 0.3s;
+
+}/*button이 기본적으로 background-color나 radius나 border나 뭐 이런게 다 있는데 변경하는 방법! */
+
+
+.wrap .container .slick .slick-dots li.slick-active button{
+    background-color: #222;
+    /* 내가 선택한 버튼의 색깔이 888에서 222로 바뀜. */
+    width: 20px;
+    border-radius: 10px;
+    /* 상위에 쓴 보더 레디어스가 적용되기 때문에 원하는 곳에 새로 줘야 적용됨. */
+    /* inline 요소 중 특별하게 공간을 인식하는 요소가 있는데 그 것은 바로바로 img, button */
+}

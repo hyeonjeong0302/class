@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            /* css */
+            div {
+                color: blue;
+            }
+            div.예쁜이 {
+                color: pink;
+            }
+            .멋쟁이 {
+                color: green;
+            }
+            .넷째 .넷째자식 {
+                color: gray;
+            }
+            .넷째 div{
+              background-color: aqua; /* 배경색 */
+              border: red solid 2px;
+              padding: 10px;
+            }
+            .넷째>div{
+              border-color: green;
+            }
+    /*
+    띄워쓰기 --> 자손
+    >            -->자식
+    자손을 하면 손에 다 적용되지만, 자식을 하면 손자는 안 된다.
+    */
+
+    /* 
+    .넷째자식 이라고 그냥 해도 적용은 되지만 위에 .넷째 라는 엄마가 있으니까 그걸 표시해줘야해
+    */
+
+    .막내{margin-top: 50px;;}
+    .막내 div{border: red solid 2px;
+    padding: 10px;}
+
+    .막내>div{
+      border-color: blueviolet;
+    }
+    .막내 .막내자식 .막손자{
+      background-color: orange;
+    }
+    .막내 .막내자식.막자2 .막손자{
+     background-color: greenyellow; 
+    }
+    /*보면 막내자식 막자2가 있는데 이게 띄워쓰니까 막내자식만 따로 적용이 되고 음... 막내자식 막자1, 막자2 각각에 적용시키려면 막내자식과 막자1, 2를 띄워쓰지 않고 .만 중간에 적어서 적용, 내 설명이 그지같지만 알아볼거라 믿는당*/
+
+            </style>
+    </head>
+    <body>
+        <!-- shift + alt + 방향키↓ - 한줄복사 alt + 방향키 - 한줄위,아래로 이동 shift + alt + 방향키↓ - 한줄복사
+        -->
+        <div class="순둥이">첫번째 줄입니다.</div>
+        <div class="예쁜이">두번째 줄입니다.</div>
+        <div class="멋쟁이">세번째 줄입니다.</div>
+        <div class="넷째">
+            <div class="넷째자식">넷째자식1</div>
+            <div class="넷째자식">넷째자식2</div>
+            <div class="넷째자식">
+              <div class="넷째자식">넷째의 손자</div>
+            </div>
+        </div>
+        <div class="막내">
+          <div class="막내자식 막자1">
+           <div class="막손자">막손자1</div>
+           <div class="막손자">막손자2</div>
+          </div>
+          <div class="막내자식 막자2">
+            <div class="막손자">막손자3</div>
+            <div class="막손자">막손자4</div>
+           </div>
+          </div>
+        </div>
+    </body>
+</html>

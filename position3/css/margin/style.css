@@ -1,0 +1,24 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;
+}
+
+.wrap{
+    width: 800px;
+    margin: 0 auto;
+    background-color: rgb(70, 238, 126);
+    padding: 200px 0;
+}
+.wrap>div{
+    height: 300px;
+    background-color: rgb(166, 67, 247);
+    border-top: 1px solid #222;
+}
+/* 보라색이 전체를 감쌀거라 생각했는데 section1 아래부터 나타나. 이것이 margin의 병합현상이라고 한다. 맨 위 맨 아래에는 반드시 병합현상이 일어난다. 그걸 잘 극복해봥 위아래 패딩줘서.*/
+
+.wrap>div+div{
+    margin-top: 200px;
+}/* div+div 중 딱 마지막 div에 해당되는거야. */
+
+.wrap .section2 div{
+    margin-top: 50px;
+}

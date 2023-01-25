@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slick2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <!-- 뒤에 붙었던 애들을 지우지 않아도 무방. 그러나 코드가 너무 길어지니까 걍 지워. -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> 얘를     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/> 얘보다 더 밑에 적어야 힘이 더 세 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/><!-- css에 적은 폰트어썸을 연결하려면 헤드에 또 적어줘. -->
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="slick">
+                <div>
+                    <img src="https://img.megabox.co.kr/SharedImg/2022/12/19/iFw18pQDvdY0Zgtm33P43LBQ9M93nXGP_648.jpg"
+                        alt="img1">
+                </div>
+                <div>
+                    <img src="https://img.megabox.co.kr/SharedImg/2022/12/19/uTtt5GeqLMPgvdQocHVlPTqwPm01aa7U_648.jpg"
+                        alt="img2">
+                </div>
+                <div>
+                    <img src="https://img.megabox.co.kr/SharedImg/2022/12/19/1KbKPrL6sWAk41js6O69WcdKXwaTeobK_648.jpg"
+                        alt="img3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!--     <script src="https://code.jquery.com/jquery-1.12.4.min.js">여기 사이에 뭐 적으면 안 된다!!!</script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- 여기서는 또 위의 것이 더 중요해서 위에 쓴 것을 먼저 적고 다음에 얘를 붙여... 뭐야 -->
+    <script>
+        $(document).ready(function () {
+            $('.slick').slick({
+                //setting-name: setting-value
+                autoplay:true, 
+                //autoplay:true 하면 자동으로 슬릭이 넘어가. 
+                dots: true,
+                //dots:true 하면 점이랑 숫자가 생기고 누르면 페이지로 넘어가. pagination 이라고 함.
+            });
+        });
+    </script>
+</body>
+
+</html>

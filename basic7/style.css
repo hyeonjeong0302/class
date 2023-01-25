@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* reset 
+html에 h1~6태그로 다 적어놨는데 요로케 하면 다 똑같이 나옴
+리셋인 것을 확인하는 방법을 알아보자. 선생님은 저게 왜 리셋인지 아시네?헿*/
+/* 폰트크기의 기본값은 16픽셀*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    font-weight: normal;
+    /*폰트의 두께*/
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/*a태그 밑줄 사라짐. 리셋인거야. */
+/*컬러는#222도 있고 #222222도 있는데 두명씩 끊어서 친구야. 근데 두명이 같으면 #222222를 #222로 줄일 수 있어. #223344면 #234로 줄일 수 있어. #223345면 줄일 수 없어. 세쌍이 다 쌍둥이어야 줄일 수 있어.*/
+
+.약::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/*::를 해도 :를 해도 됨. 그런데 새로 나온 코드들은 ::를 써*/
+
+.전체 {
+    background-color: #39B5E0;
+    width: 1000px;
+    margin: 30px auto 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.전체>div+div {
+    margin-top: 30px;
+}
+
+/*아휴 이게뭐람?ㅋㅋㅋ +는 형제를 나타낸다*/
+
+.전체 .첫째 {
+    background-color: #A31ACB;
+    padding: 20px;
+}
+
+.전체 .첫째:hover {
+    color: green;
+}
+
+/*hover는 ::가 아니라 :*/
+.전체 .첫째 .첫자 {
+    background-color: #0081C9;
+    width: 49%;
+    height: 200px;
+    float: left;
+}
+
+.전체 .첫째 .첫자.첫째자식1 {
+    background-color: #5BC0F8;
+    margin-right: 2%;
+}
+
+.전체 .첫째 .첫자.첫째자식2 {
+    background-color: #86E5FF;
+}
+
+.전체 .둘째 {
+    background-color: #F5EA5A;
+
+}
+
+.전체 .둘째 .앵커 {
+    background-color: blue;
+
+}
+
+.전체 .둘째 p {
+    width: 150px;
+    margin-top: 20px;
+}
+
+.전체 .둘째 p a {}
+
+.전체 .둘째 p a img {
+    width: 100%;
+}/* 이미지는 a태그 아니라 그 위의 p태그 설정값을 따락, a태그는 인라인요소이기때문에... 오잉? 그래서 결국 a태그는 이미지의 값을 따라가...?*/
+/* 인라인요소안에는 인라인요소만 들어간다
+(인라인요소안에 블럭요소 들어가지 않음)
+블럭요소안에는 인라인요소, 블럭요소 모두 들어감
+span(인)p(블) - (x)   ---> 이렇게 써도 에러가 나진 않아, 다만 에러가 없다고 문제가 없는 것은 아냐, 잘 지켜야해. 특별히 합리적 이유가 있어야만 이렇게 사용할 수 있댜.(html에서 그렇다는거지 css에서는 이렇게 해도 돼.)
+p span - (o)
+span img - (o)
+*/
+
+/*인라인요소는 공간을 인식하지 못한다. 
+그래서 넓이, 높이값을 주어도 적용되지 않는다. 
+예외, img, button 태그는 인라인요소지만 넓이와 높이가 적용됨.*/
+.전체 .세째 {
+    background-color: #FF78F0;
+}

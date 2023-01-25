@@ -1,0 +1,11 @@
+
+.section::after {
+    content: "\f82f";
+    /* 콘텐츠 뒤에 "" 속 아이콘이나 문자를 넣겠다 이거야. 
+    엔터키 위에 있는 돈 표시가 역슬래시라는데 난 안돼. 찾아보자.
+    돈표시 나와도 됨. 원하는 아이콘 클릭해서 나오는 저거를 복사해서 붙여.*/
+    font-family: "Font Awesome 5 Free";
+    /* font-family: "Font Awesome 5 Pro";
+    프로를 프리로 바꾸면 공짜로 쓸 수 있어. 내가 직접 바꿔야 함. */
+    font-weight: 900;
+}
