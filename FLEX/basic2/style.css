@@ -1,0 +1,25 @@
+@import url(basic.css);
+/* @import url(basic.css); 이렇게 하면 basic.css에 적힌 내용이 여기에 다 적힌다고 보면 됨. 연결시키는거얌.*/
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    /* justify-content: ;메인축방향으로 이동 */
+    /* justify-content: flex-start;  기본값. */
+    justify-content: flex-end;
+    /* justify-content: flex-end; 오른쪽으로 붙어. */
+    justify-content: center;
+    /* justify-content: center;  가운데 정렬 제일 많이 써. */
+    /*  justify-content: space-between; 
+    양 옆을 제외한 컨텐츠 사이의 공간을 균등하게. 양 옆은 벽에 붙여. 
+    justify-content: space-around; 
+    하나하나를 싼 양쪽이 똑같음.
+    justify-content: space-evenly; 
+    제일 바깥쪽 오른쪽 왼쪽까지 해서 그냥 전부의 간격을 균등하게. 
+    벽과 끝놈까지도. 
+    justify-content: space-evenly; 얘는 인터넷익스플로어에서는 안 돼서 그냥 사용 자체를 잘 하지 않아. */
+}
+
+/* justify는 가로로 왔다갔다 하는 것이 아니라 메인축을 따르는 것이야. flex-direction을 변경해서 메인축 방향을 바꿀 수 있으니 그 것에 따라서 justify가 바뀜. 주의해야해. 
+row, column을 잘 보고 판단해랑. 
+그러나 아무 것도 설정하지 않으면 row. */
