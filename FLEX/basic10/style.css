@@ -1,0 +1,19 @@
+@import url(basic.css);
+/* @import url(basic.css); 이렇게 하면 basic.css에 적힌 내용이 여기에 다 적힌다고 보면 됨. 연결시키는거얌.*/
+
+.container {
+    display: flex;
+}
+
+.item:nth-child(1) {
+    width: 200px;
+    flex-shrink: 0;
+    /* 0은 false, 1은 true */
+    /* flex-shrink: 0; 너의 너비는 200px이야. 이 이하로 줄어들면 안돼!
+    */
+}
+
+.item:nth-child(2) {
+    flex-grow: 1;
+    /* flex-grow: 1; 넌 줄어들어! */
+}

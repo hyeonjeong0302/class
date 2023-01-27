@@ -1,0 +1,21 @@
+@import url(basic.css);
+/* @import url(basic.css); 이렇게 하면 basic.css에 적힌 내용이 여기에 다 적힌다고 보면 됨. 연결시키는거얌.*/
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    /* min-height: 100vh;최소값이 100vh야. 이거보다 넘칠 수는 있지만 최소 이 값이야. 라는 뜻. 이렇게 하면 빨간선이 끊어지지 않고 스크롤을 내려도 다 나옴.  */
+    /* height: 100vh; 하고 overflow:hidden; 하면 스크롤 안 생김. */
+    flex-wrap: wrap;
+}
+
+.item{
+    flex: 1 auto;
+    width: 30%;
+    /* flex-grow: 1; 넓이가 있다면 넓이보다 늘어날 수 있다.
+    flex-shrink: 1; 넓이가 있다면 넓이보다 줄어들 수 있다. 
+    flex: 1 1 auto; 늘어나라 줄어들어라 오토*/
+    /* flex-basis: auto; 넓이값이 있다면 인식하겠다. */
+    /* 늘어나라는 명령 때문에 width:30%를 줘도 27%를 줘도 모두 3분의 1씩 차지함. 
+    총 100% 안에 한줄에 들어가는만큼 채우고 나머지는 떨어뜨린다. */
+}
