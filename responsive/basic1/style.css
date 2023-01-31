@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #00424a;
+    color: #fff;
+}
+
+h1::before {
+    content: "1. ";
+    /* 비포가 인라인 요소라서 글씨랑 나란히 붙어. */
+}
+
+h1::after {
+    content: " - 기본";
+    /* 애프터 역시 인라인 요소라거 글씨랑 나란히 붙어. */
+}
+
+/* 배경화면 우클릭 디스플레이설정의
+비율 및 레이아웃을 100%로 해놔야해. 확인할 것. 그렇게 해야 반응형이 학원에서 했던 것과 똑같이 도출 돼.
+그러고나서 화면의 크기를 마우스 등을 이용해서 줄이거나 키워보면 미디어쿼리에서 설정한 값이 도출됨. */
+
+/* 화면너비가 0~1280px: 일반적인 데스크탑 */
+/* 최대 너비가 1280이기 때문에 1280보다 화면의 크기가 작으면 이 중괄호 안의 내용이 실행됨. 크면 저 위의 기본 body의 내용이 실행됨. 
+이하 나머지 사이즈도 동일하게 적용됨. */
+@media(max-width: 1280px) {
+    body {
+        background-color: #f55050;
+    }
+    h1::before {
+        content: "2. ";
+    }
+    
+    h1::after {
+        content: " - 1025px ~ 1280px";
+    }
+}
+
+/* 화면너비가 0~1024px: 좀 큰 노트북 */
+@media (max-width:1024px){
+    body{
+        background-color:  #243763;
+        /* 위에 백그라운드 컬러로 했으니까 여기도 백그라운드 컬러 해야지 갑자기 백그라운드 하면 안 됨. */
+    }
+    h1::before {
+        content: "3. ";
+    }
+    
+    h1::after {
+        content: " - 961px ~ 1024px";
+    }
+}
+/* 화면너비가 0~960px: 작은 노트북 */
+@media(max-width:960px){
+    body{
+        background-color:  #850000;
+        /* 위에 백그라운드 컬러로 했으니까 여기도 백그라운드 컬러 해야지 갑자기 백그라운드 하면 안 됨. */
+    }
+    h1::before {
+        content: "4. ";
+    }
+    
+    h1::after {
+        content: " - 769px ~ 960px";
+    }
+}
+/* 화면너비가 0~768px: 테블릿PC */
+@media(max-width:768px){
+    body{
+        background-color:  #008521;
+
+    }
+    h1::before {
+        content: "5. ";
+    }
+    
+    h1::after {
+        content: " - 577px ~ 768px";
+    }
+}
+/* 화면너비가 0~576px: 모바일 */
+@media(max-width:576px){
+    body{
+        background-color: #612dc2;
+    }
+    h1::before {
+        content: "6. ";
+    }
+    
+    h1::after {
+        content: " - 0px ~ 576px";
+    }
+}
+/* 모바일도 옆으로 보는 것은 랜드 사이즈고 테블릿과 비슷한 크기가 되는 것도 있고 위에서 말한 모바일은 세워서 보는 기준 */
