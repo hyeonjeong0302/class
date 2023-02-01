@@ -28,12 +28,22 @@ footer{
     background-color: darkkhaki;
 }
 
-@media(max-width:1200px){
+@media(max-width:1215px){
     #wrap{width: 95%;}
     aside {width: 30%;}
-    section{width: 70%;}   
+    section{width: 70%;} 
+      /* 화면이 1200px을 넘으면 너비가 원래 설정한 값처럼 1200px이야. */
     /* 왜 95%, 30%, 70% 했냐! 전체 화면서 저만큼을 차지하겠다 이거야. 그냥 px단위로 너비를 주면 넘치면 스크롤이 생기는데 %로 주면 스크롤이 생기지 않아. */
 } /*max-width:1200px*/
+
+@media(max-width:768px){
+    #wrap{width: 100%;}
+    aside {width: 100%;height: 200px;
+    float: none;}
+    section{width: 100%;height: 300px;float: none;} 
+    /* 모바일로 볼 때는 화면이 작으니까 옆에 5%의 공간이 띄워지면 좀 비효율적이라 768px 미만으로 내려갈 때는 너비를 100%로 변경했음. */
+    /* 모바일이 아무리 작아도 320px 이하짜리는 없으니까 너무 그 이하의 부분까지 보지 않아도 됨. */
+}
 
 /* .이나 # 없이 그냥 불러 */
 /* 형이랑 동생이랑 나란히 정렬하려면 형에 float: left; 동생에 float: right;준다.

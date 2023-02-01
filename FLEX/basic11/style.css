@@ -10,11 +10,11 @@
     /* flex: flex-grow flex-shrink flex-basis; */
     /* flex-basis: auto; 기본값, item이 가진 width값을 넓이로 잡겠다는 뜻. */
     flex: 1 0 0%;
-    flex: 1 0 auto;
+    /* flex: 1 0 auto; */
 
     /* flex: 1 auto;라고 꼭 적어줘야 해. 그렇지 않고 flex: 1; 요래만 하면
     flex-grow:1 flex-shrink:1 flex-basis: 0%라는 뜻으로 읽힌다. 
     그런데 웃긴 것은  flex-basis를 처음부터 적지 않으면 그냥 오토값이 기본값이야. 환장할 노릇이야. 그러니까 flex라고 할 때는 꼭 값을 지정해주자. */
     /* flex: 1 500px; 이거는 flex-grow:1 flex-shrink:1 flex-basis: 500px이라는 뜻 */
-    flex: 1 500px;
+    /* flex: 1 500px; */
 }

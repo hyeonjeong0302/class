@@ -3,7 +3,6 @@
 
 .container {
     display: flex;
-    
 }
 
 .item {
@@ -11,7 +10,7 @@
     width: 100px;
     flex-grow: 1;
     /*flex-grow의 의미: 가지고 있는 넓이보다 커질 수 있다. */
-    
+
 }
 
 .item:nth-child(1){
@@ -19,7 +18,7 @@
 
 }
 .item:nth-child(2){
-    flex-grow: 2; 
+    flex-grow: 5; 
 
 }
 .item:nth-child(3){

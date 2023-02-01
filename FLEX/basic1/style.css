@@ -4,7 +4,7 @@
 .container {
     display: flex;
     /* display: inline-flex; */
-    flex-direction: row;
+    flex-direction: row-reverse;
     /* flex-direction: row; 기본값*/
     /* flex-direction: row-reverse;  로우인데 오른쪽부터 붙어.*/
     /* flex-direction: column; 세로로 정렬     */
@@ -28,10 +28,10 @@
 }
 
 .item {
-    width: 40%;
+    width: 45%;
 }
 
 .item:nth-child(1) {
-    white-space: nowrap;
+    white-space: wrap;
     /* flex는 nowrap이 기본값임. white-space: nowrap; 내가 가진 너비를 옆으로 쭉 늘어뜨리고 떨어뜨리지 않아. 옆으로 가는 스크롤이 생성됨. */
 }

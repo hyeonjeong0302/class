@@ -11,7 +11,8 @@
 
 .item{
     flex: 1 auto;
-    width: 30%;
+    width: 40%;
+    height: 400px;
     /* flex-grow: 1; 넓이가 있다면 넓이보다 늘어날 수 있다.
     flex-shrink: 1; 넓이가 있다면 넓이보다 줄어들 수 있다. 
     flex: 1 1 auto; 늘어나라 줄어들어라 오토*/
