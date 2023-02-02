@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import url(reset.css);
+
+/* input태그를 통해서 사용자가 안에 뭐 채워넣는 것을 만들 수 있다. */
+
+body {
+    background-color: #eee;
+}
+
+.wrap {}
+
+.header {
+    display: flex;
+    /* 헤더야 너의 자식인 h1이랑 form태그를 옆으로 정렬시키자. 이 말이여.  */
+    align-items: center;
+    height: 80px;
+    background-color: gray;
+    padding: 0 15px;
+}
+
+.header .website_title {}
+
+.header .search_form {
+    width: 250px;
+    margin-left: auto;
+    /* margin-left: auto; 
+    너의 안쓰는 왼쪽을 자유롭게 쓸게. 하면 오른쪽에 싹 붙음. */
+}
+
+/* type이 serach인 애를 부르고 싶다. 그러면 [type="search"]를 쓴다. 
+클래스명으로 붙여도 된다. .classname*/
+.header .search_form input[type="search"] {
+    border-radius: 5px;
+}
