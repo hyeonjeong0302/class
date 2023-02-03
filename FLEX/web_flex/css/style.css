@@ -7,15 +7,20 @@ body {
     background-color: #eee;
 }
 
-.wrap {}
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    /* display:flex;가 들어가면 그 자식들(header, menu)에게 똑같이 플렉스를 줘도 무조건 한 줄에 들어가. 플렉스는 유연하니까. 그런데 flex-wrap: wrap;을 쓰면 한 줄을 넘어가면 밑으로 떨어져. */
+}
 
 .header {
+    width: 100%;
+    height: 80px;
+    background-color: gray;
     display: flex;
     /* 헤더야 너의 자식인 h1이랑 form태그를 옆으로 정렬시키자. 이 말이여.  */
     align-items: center;
-    height: 80px;
-    background-color: gray;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 .header .website_title {}
@@ -31,4 +36,68 @@ body {
 클래스명으로 붙여도 된다. .classname*/
 .header .search_form input[type="search"] {
     border-radius: 5px;
+    border: 0;
+    /* border: 0; 인풋은 기본적으로 보더를 가지고 태어나는데 그걸 없애.  
+     border: none;도 오키
+    */
+    outline: none;
+
+    /* outline: none;  이걸 안 하면 검색하려고 커서 올리면 검색창 주위에 검게 돼. */
 }
+
+.header .search_form input[type="submit"] {
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    width: 60px;
+    background-color: gold;
+}
+
+/* menu */
+
+.menu {
+    width: 100%;
+    display: flex;
+}
+
+.menu .menu_item {
+    width: 25%;
+    background-color: gold;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.menu .menu_item:hover {
+    width: 35%;
+    background-color: skyblue;
+    /* menu를 flex로 했기 때문에 hover되었을 때 마지막 친구가 밑으로 떨어지지 않고 영역이 줄어들어서 한 줄어 들어옴. float: left;로 했으면 밑으로 떨어졌을 것.  */
+}
+
+.menu .menu_item .menu_link {
+    display: block;
+    font-size: 20px;
+    padding: 15px 0;
+    font-weight: bold;
+}
+
+.primary {}
+
+.primary .card_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.primary .card_list .card_item {
+    width: 33.3333%;
+    padding: 0 15px;
+}
+
+.primary .card_list .card_item .card_image {
+    background: url(../img.jpg)no-repeat center center;
+    /* padding과 margin의 상하좌우 공간을 %로 줄 때 기준이 부모의 너비값이기 때문에 %로 너비값을 줘라. 그래야 반응형으로 되어서 창 크기를 늘리고 줄일 때 사진의 사이즈가 자동으로 비율에 맞게 조절된다. */
+    /* 근데 왜 사진이 안 뜨지? 오잉 내가 뭘 빼먹었나? */
+    height: 0;
+    padding-bottom: 60%;
+}
+
+.primary .card_list .card_item .card_image .card_desc {}

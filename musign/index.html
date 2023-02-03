@@ -7,25 +7,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font/stylesheet.css">
+
+
 </head>
 
 <body>
-    <div class="one animate" data-animate="motion" ></div>
-    <div class="two animate" data-animate="motion"></div>
+    <div class="wrap">
+        <header>
+            <div class="innerheader">
+                <h1 class="logo">
+                    <a href="#">
+                        <img src="img/logo1.png" alt="로고">
+                    </a>
+                </h1>
+                <nav class="mainmenu">
+                    <ul class="gnb en">
+                        <li>
+                            <a href="#">Design</a>
+                        </li>
+                        <li>
+                            <a href="#">Capabilities</a>
+                        </li>
+                        <li>
+                            <a href="#">Cases</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <ul class="sns">
+                        <li>
+                            <a href="#">
+                                <img src="img/sns-icon01.png" alt="sns">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/sns-icon02.png" alt="sns">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/sns-icon03.png" alt="sns">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/sns-icon04.png" alt="sns">
+                            </a>
+                        </li>
+                    </ul>
+                </nav><!-- mainmenu -->
+            </div>
+        </header><!-- //header -->
+        <section class="visual clearfix">
+            <div class="mainImg">
+                <p class="img">
+                    <img src="img/mainVisual.jpg" alt="mainVisual">
+                </p>
+            </div><!-- //mainImg -->
+            <div class="mainTxt">
+                <h2 class="tit en">
+                    <span class="en_s">
+                        <b>Digital experience integrated platform – musign</b>
+                    </span>
+                    <span><b>Powerful and useful</b></span>
+                    <span><b>Musign W. Platform</b></span>
+                </h2>
+                <div class="txt">
+                    <p><b>“브랜드의 가치를 디자인하는 뮤자인은 디지털 아티스트 컴퍼니입니다.”</b></p>
+                    <p><b>우리의 바램은 작품 하나하나에 창조적이고 유니크한 솔루션을 제공하는 것입니다.<br>
+                            고객의 니즈에 따라 커스텀이 자유로우며 고도화된 기능을 자랑하는 플랫폼인 ‘musign W.Platform’
+                            <br>은 뮤자인이 가지고 있는 수많은 노하우의 결과입니다.</b></p>
+                    <p><b><a href="#">read more</a></b></p>
+                </div><!-- //txt -->
+            </div><!-- //mainTxt -->
+        </section><!-- //visual -->
+    </div>
 
 
-<!-- 순서 중요!
+    <!-- 순서 중요!
 제이쿼리 먼저 그 다음에 스크롤라! -->
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="js/jquery.scrolla.min.js"></script>
-<script>
-    $('.animate').scrolla({
-  // default
-  mobile: false, // disable animation on mobiles
-  once: false, // only once animation play on scroll
-  animateCssVersion: 4 // used animate.css version (3 or 4)
-});
-</script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="js/jquery.scrolla.min.js"></script>
+    <script>
+        $('.animate').scrolla({
+            // default
+            mobile: false, // disable animation on mobiles
+            once: false, // only once animation play on scroll
+            animateCssVersion: 4 // used animate.css version (3 or 4)
+        });
+    </script>
 </body>
 
 </html>
