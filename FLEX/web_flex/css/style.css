@@ -90,14 +90,77 @@ body {
 .primary .card_list .card_item {
     width: 33.3333%;
     padding: 0 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
 }
 
 .primary .card_list .card_item .card_image {
-    background: url(../img.jpg)no-repeat center center;
+    background: url(../img.jpg)no-repeat center top;
     /* padding과 margin의 상하좌우 공간을 %로 줄 때 기준이 부모의 너비값이기 때문에 %로 너비값을 줘라. 그래야 반응형으로 되어서 창 크기를 늘리고 줄일 때 사진의 사이즈가 자동으로 비율에 맞게 조절된다. */
     /* 근데 왜 사진이 안 뜨지? 오잉 내가 뭘 빼먹었나? */
     height: 0;
     padding-bottom: 60%;
+    background-size: cover;
+    width: 100%;
 }
 
-.primary .card_list .card_item .card_image .card_desc {}
+.primary .card_list .card_item .card_desc {
+    padding: 15px;
+    background-color: #fff;
+    flex-grow: 1;
+}
+
+.secondard {
+    width: 300px;
+    padding: 15px;
+}
+
+.secondard-a,
+.secondard-b {
+    background-color: #fff;
+}
+
+.info-list {}
+
+.info-list .info-list-item {
+    display: flex;
+    margin: 7px 0;
+}
+
+.info-list-item::before {
+    content: "※";
+    margin-right: 7px;
+}
+
+/* friend-list */
+.friend-list {}
+
+.friend-list .user-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.user-list {
+    margin-top: 35px;
+}
+
+.user-list .user-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.user-list .user-item .user-photo {
+    width: 50px;
+    height: 50px;
+    background: url(../img.jpg)no-repeat center top;
+    background-size: cover;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin-right: 7px;
+}
+/* 왜 짱구 옆으로 글씨가 안 가고 겹치지? */
+.user-list .user-item .user-photo .user-name {}

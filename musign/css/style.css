@@ -95,22 +95,201 @@ header {}
 
 
 /* visual */
-.visual {}
+.visual {
+    max-width: 1720px;
+    margin: 0 auto;
+}
 
 .visual .mainImg {
     float: left;
     width: 50%;
 }
 
-.visual .mainImg .img {}
+.visual .mainImg .img {
+    width: 90%;
+}
 
 .visual .mainImg .img img {}
 
 .visual .mainTxt {
     float: left;
     width: 50%;
+    margin-top: 180px;
 }
 
-.visual .mainTxt .tit {}
+.visual .mainTxt .tit {
+    font-size: 72px;
+
+}
+
+.visual .mainTxt .txt {
+    padding: 50px 0 0 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.visual .mainTxt .tit span.gray {
+    color: #ccc;
+}
 
 .visual .mainTxt .tit .en_s {}
+
+.visual .mainTxt {}
+
+/* 타이틀, 텍스트  */
+.tit {
+    font-size: 50px;
+    line-height: 1.1;
+    font-weight: normal;
+}
+
+.tit span {
+    display: block;
+}
+
+.tit span b {
+    font-weight: normal;
+}
+
+.tit .en_s {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.txt p {
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.txt p b {
+    font-weight: normal;
+}
+
+/* readmore */
+.moreBtn {
+    position: relative;
+    display: inline-block;
+    color: #333;
+    margin-top: 20px;
+    padding-left: 48px;
+    transform: skewX(-15deg) translateX(5px);
+    /* transform: skewX(-15deg) 여기 사이에 반드시 띄우고, 사이에 ,금지 translateX(5px); */
+    /* transform: skewX(-15deg); 글자 기울게*/
+    transition: 0.3s;
+}
+
+.moreBtn:hover {
+    transform: skewX(0deg) translateX(0px);
+    font-weight: bold;
+
+}
+
+.moreBtn::before {
+    content: "";
+    width: 42px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    top: 52%;
+
+}
+
+/* //타이틀, 텍스트  */
+
+/* 이미지 애니메이션 */
+.img.animate__motion {
+    position: relative;
+    animation: imgAni 1s;
+}
+
+@keyframes imgAni {
+    0% {
+        transform: translateY(50px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.img.animate__motion::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #fff;
+    animation: mask 1.2s;
+}
+
+@keyframes mask {
+    0% {
+        height: 90%;
+    }
+
+    100% {
+        height: 0;
+    }
+}
+
+/* //이미지 애니메이션 */
+
+/* 텍스트 애니메이션 */
+.tit.animate__motion {}
+
+.tit.animate__motion span {
+    overflow: hidden;
+}
+
+.tit.animate__motion span b {
+    animation: textAni 1.3s;
+    display: block;
+}
+
+@keyframes textAni {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+        transform: translateY(40px) skewY(8deg);
+        transform-origin: left top;
+    }
+}
+.txt.animate__motion p {overflow: hidden;}
+
+.txt.animate__motion p b {
+    display: block;
+    animation: textAni 2s;
+}
+
+/* //텍스트 애니메이션 */
