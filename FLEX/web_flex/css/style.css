@@ -114,7 +114,7 @@ body {
 
 .secondard {
     width: 300px;
-    padding: 15px;
+    padding: 15px;box-sizing: border-box;
 }
 
 .secondard-a,
@@ -161,6 +161,62 @@ body {
     border-radius: 50%;
     border: 2px solid #333;
     margin-right: 7px;
+    flex-shrink: 0;
+    /* flex-shrink: 0;요걸 안 하면 짱구 동그라미들이 납작하고 난리가 남 */
 }
-/* 왜 짱구 옆으로 글씨가 안 가고 겹치지? */
+
+/* 왜 짱구 옆으로 글씨가 안 가고 겹치지? 
+html을 잘못 했었음. 해결완료!*/
 .user-list .user-item .user-photo .user-name {}
+
+/* 순서만들기 */
+.primary {
+    order: 2;
+    width: calc(100% - 600px);
+    /* width: calc(100% - 600px);
+    요래하면 왼쪽 옆으로 삭 붙어. 전체너비에서 600px만큼 뺀 값. 왜 600을 빼냐!  */
+    /* secondard를 보면 너비 300px에 패딩 양쪽 15px이 있어서 330px이다. 그래서 그 값을 가운데 놓고 양쪽에 300px짜리 사이드바 두 개가 오게 하는데 양쪽은 300px로 고정이고 가운데를 줄이고 막 그런다.  */
+}
+
+.secondard-a {
+    order: 1;
+}
+
+.secondard-b {
+    order: 3;
+}
+
+footer {
+    order: 4;
+    text-align: center;line-height: 2.5;width: 100%;
+    border-top: 1px solid lightgray;
+}
+
+@media (max-width:1200px){
+    .secondard{width: 200px;}
+    .primary{
+      width: 50%;
+      flex-grow: 1;
+      /*flex-shrink: 1; //기본값 */
+    }
+  }
+  
+  @media (max-width:1024px){
+    .primary .card-list .card-item{
+      width: 50%;
+    }
+    .primary .card-list .card-item:last-child{
+      display: none;
+    }
+  }
+  
+  @media (max-width:820px){
+    .secondard{width: 100%;}
+  }
+  
+  @media (max-width:600px){
+    .primary .card-list .card-item{
+      width: 100%;
+    }
+    .secondard-a{order:2}
+  }

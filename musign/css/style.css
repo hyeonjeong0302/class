@@ -126,7 +126,40 @@ header {}
     padding: 50px 0 0 70px;
 }
 
+/* journal */
+section.journal {
+    position: relative;
+    padding: 190px 0 120px;
+}
 
+section.journal .scroll {
+    /* scroll글자 */
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    /* writing-mode: vertical-rl; 글씨를 수직으로 바꿔주는데 오른쪽에서 왼쪽으로 간다. 자주안씀 */
+    padding-top: 90px;
+}
+
+section.journal .scroll::before {
+    /* 비포를 줄거냐 애프터를 줄거냐. 상관없지만 clear:both;는 반드시 애프터에 줘야해. */
+    content: "";
+    position: absolute;
+    height: 75px;
+    width: 1px;
+    background-color: #333;
+    top: 0;
+    left: 6px;
+}
+
+section.journal .box .img {
+    padding-top: 100px;
+}
 
 
 
@@ -160,6 +193,19 @@ header {}
 .visual .mainTxt .tit .en_s {}
 
 .visual .mainTxt {}
+
+/* inner - 넓이에 대한 가이드  */
+section .inner {
+    width: 1320px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* overflow: hidden;  부모가 깨지는 것을 막기 위해 부모에다가 이걸 해줘. */
+}
+
+section .inner .box {
+    float: left;
+    width: 50%;
+}
 
 /* 타이틀, 텍스트  */
 .tit {
@@ -285,7 +331,10 @@ header {}
         transform-origin: left top;
     }
 }
-.txt.animate__motion p {overflow: hidden;}
+
+.txt.animate__motion p {
+    overflow: hidden;
+}
 
 .txt.animate__motion p b {
     display: block;
@@ -293,3 +342,70 @@ header {}
 }
 
 /* //텍스트 애니메이션 */
+
+/* svg */
+.circleBox {}
+
+.circleBox .svgAni {}
+
+.circleBox .svgAni path {
+    /* stroke-dasharray: 6056px; */
+    /* stroke-dasharray: 50px 100px;  첫 번째 값은 점선 빨간 부분의 길이, 두번째 값은 점선 사이의 길이
+    한 번만 적으면 두 가지에 같은 값이 적용.*/
+    /* stroke-dashoffset: 0; */
+    /* stroke-dashoffset: 50px; 원의 위치를 변경... 그래서 선의 위치가 변경. 해보면 알으 */
+    /* transition: 0.5s; */
+    stroke-dasharray: 3000px;
+}
+
+.circleBox:hover .svgAni path {
+    /* stroke-dashoffset: 6056px; */
+    /* stroke-dashoffset: 6056px; 요로케 하면 선이 삭 없어져. */
+    /* 선이 생기게 하려면 반대로 하면 됨. 
+    .circleBox .svgAni path{
+        stroke-dashoffset: 6056px;
+    }
+    .circleBox:hover .svgAni path{
+    stroke-dashoffset: 0;
+    }
+    */
+}
+
+section.journal .circleBox {
+    position: absolute;
+    /* 저 위에 섹션 저널에 포지션 잡아줌. */
+    width: 700px;
+    right: 13%;
+    top: 100px;
+    z-index: -1;
+}
+
+
+.inner .box ul {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 40px;
+    margin-top: 40px;
+    /* padding-top: 40px;margin-top: 40px; ul기준으로 패딩은 내 공간 안이니까 선 밑에 패딩 40이 생기고, ul기준으로 마진은 내 공간 바깥의 공간이니까 선위에 마진 40이 생겨서 선이 중간에 위치하게 됨.  */
+}
+
+.inner .box ul li {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /* overflow: hidden; 모든 li에게 약주면 힘드니까 부모에게 이걸 주면 정리가 됨. */
+}
+
+.inner .box ul li h3 {
+    float: left;
+    width: 22%;
+    font-size: 15px;
+}
+
+.inner .box ul li p {
+    float: left;
+    width: 78%;
+    color: #888;
+}
+section.journal .moreBtn{
+    margin-left: 22%;
+    /* margin-left: 22%; 이걸 위에다가 패딩을 주면 글씨만 움직이고 선은 따라오지 않으니까 전체에다가 이걸 주면 선이랑 같이 움직여. */
+}
