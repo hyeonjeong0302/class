@@ -12,11 +12,9 @@
 <body>
     <div id="header">
         <a href="https://www.naver.com/" target="_blank" title="네이버홈으로 가기">
-            <!-- target="_blank"하면 새탭에 열림 
-            title="네이버홈으로 가기" 장애인에게 네이버홈으로 가기 라고 읽어줌. 그리고 커서 올리면 네모에 글씨가 떠 -->
             <img src="img/NAVER_CI_Green.png" alt="logo">
         </a>
-    </div><!-- //header-->
+    </div><!-- //header -->
     <div id="wrapper">
         <div id="content">
             <div>
@@ -24,14 +22,109 @@
                     <label for="id">아이디</label>
                 </h3>
                 <span class="box int_id">
-                    <input type="text" id="id" class="int" maxlength="20">
-                    <!-- for="요기" id="요기" 두 개의 ""속에 나온 글자가 같아야 한다. 네모를 클릭해도 그 위의 글씨를 클릭해도 네모에 커서가 생기는 것을 보면 알아. 안 생기면 두 개가 일치하지 않는 것이야.
-                회사에서 아무리 id쓰지 말라해도 요 안의 id까지 빼면 안 돼. -->
+                    <input type="text" id="id2" class="int" maxlength="20">
                     <span class="step_url">@naver.com</span>
                 </span>
-            </div>
-        </div>
-    </div>
+            </div> <!-- //id -->
+            <div>
+                <h3 class="join_title">
+                    <label for="pswd1">비밀번호</label>
+                </h3>
+                <span class="box int_pass">
+                    <input type="text" id="pswd1" class="int" maxlength="20">
+                    <img src="img/m_icon_pass.png" class="pswImg" alt="비밀번호">
+                </span>
+            </div><!-- //pw1 -->
+            <div>
+                <h3 class="join_title">
+                    <label for="pswd2">비밀번호 재확인</label>
+                </h3>
+                <span class="box int_pass_check">
+                    <input type="text" id="pswd2" class="int" maxlength="20">
+                    <img src="img/m_icon_check_disable.png" class="pswImg" alt="비밀번호 재확인">
+                </span>
+            </div><!-- //pw2 -->
+            <div>
+                <h3 class="join_title">
+                    <label for="name">이름</label>
+                </h3>
+                <span class="box int_name">
+                    <input type="text" id="name" class="int" maxlength="20">
+                </span>
+            </div><!-- //name -->
+            <div>
+                <h3 class="join_title">
+                    <label for="yy">생년월일</label>
+                </h3>
+                <div id="bir_wrap">
+                    <div id="bir_yy">
+                        <span class="box">
+                            <input type="text" id="yy" class="int" maxlength="4" placeholder="년(4)">
+                        </span>
+                    </div><!-- //생년 -->
+                    <div id="bir_mm">
+                        <span class="box">
+                            <select id="mm">
+                                <option>월</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </span>
+                    </div><!-- //생월 -->
+                    <div id="bir_dd">
+                        <span class="box">
+                            <input type="text" id="dd" class="int" maxlength="2" placeholder="일">
+                        </span>
+                    </div><!-- //생일 -->
+                </div>
+            </div><!-- //생년월일 -->
+            <div>
+                <h3 class="join_title">
+                    <label for="gender">성별</label>
+                </h3>
+                <span class="box gender_code">
+                    <select id="gender">
+                        <option>성별</option>
+                        <option value="M">남자</option>
+                        <option value="F">여자</option>
+                    </select>
+                </span>
+            </div><!-- //gender -->
+            <div>
+                <h3 class="join_title">
+                    <label for="email">본인확인 이메일 
+                        <span class="optional">(선택)</span>
+                    </label>
+                </h3>
+                <span class="box int_email">
+                    <input type="text" id="email" class="int" maxlength="100" placeholder="선택입력">
+                </span>
+            </div><!-- //email -->
+            <div>
+                <h3 class="join_title">
+                    <label for="phoneNo">휴대전화</label>
+                </h3>
+                <span class="box int_mobile">
+                    <input type="text" id="phoneNo" class="int" maxlength="16" placeholder="전화번호 입력">
+                </span>
+            </div><!-- //phone -->
+            <div class="btn_area">
+                <button type="button" class="btnJoin">
+                    <span>가입하기</span>
+                </button>
+            </div><!-- //버튼 -->
+        </div><!-- //content -->
+    </div><!-- //wrapper -->
 </body>
 
 </html>

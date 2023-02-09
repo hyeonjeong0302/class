@@ -40,7 +40,8 @@ input:focus {
     margin: 19px 0 8px;
 }
 
-.box {position: relative;
+.box {
+    position: relative;
     display: block;
     width: 100%;
     height: 51px;
@@ -66,4 +67,63 @@ input:focus {
     right: 13px;
     font-size: 15px;
     color: #8e8e8e;
+}
+
+.pswImg {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 19px;
+    height: 20px;
+}
+
+#bir_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+#bir_wrap #bir_yy {
+    width: 147px;
+}
+
+#bir_wrap #bir_mm {
+    width: 147px;
+}
+
+#bir_wrap #bir_dd {
+    width: 147px;
+}
+
+select {
+    width: 100%;
+    border: none;
+    appearance: none;
+    background: url(img/sel_arr_2x.gif)no-repeat right 50%;
+    background-size: 20px 8px;
+    font-size: 15px;
+}
+
+select:focus {
+    outline: none;
+}
+
+.optional {
+    font-size: 12px;
+    font-size: 400;
+    color: #828282;
+}
+
+.btn_area{
+    margin: 20px 0 91px;
+}
+.btn_area .btnJoin{
+    /* img, button은 인라인요소이지만 넓이를 인식 */
+    width: 100%;
+    border: none;
+    background-color: #08a600;
+    font-size: 20px;
+    color: #fff;
+    padding: 21px 0 17px;
+    cursor: pointer;
 }

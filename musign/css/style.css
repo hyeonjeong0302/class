@@ -33,6 +33,37 @@ body {
     clear: both;
 }
 
+/* menuOpen */
+.menuOpen {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 30px 20px;
+}
+
+.menuOpen .open {
+    background: none;
+    border: 0;
+}
+
+.menuOpen .open::before {
+    content: "";
+    position: absolute;
+    right: -100px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    z-index: -1;
+    transition: 0.3s;
+}
+
+.menuOpen .open:hover:before {
+    right: 0;
+
+}
+
 /* header */
 header {}
 
@@ -105,7 +136,7 @@ header {}
     width: 50%;
 }
 
-.visual .mainImg .img {
+.visual .mainImg img {
     width: 90%;
 }
 
@@ -355,7 +386,12 @@ section .inner .box {
     /* stroke-dashoffset: 0; */
     /* stroke-dashoffset: 50px; 원의 위치를 변경... 그래서 선의 위치가 변경. 해보면 알으 */
     /* transition: 0.5s; */
-    stroke-dasharray: 3000px;
+    stroke-dasharray: 6055px;
+    stroke-dashoffset: 0;
+}
+
+.circleBox.animate__motion .svgAni path {
+    animation: dash 1.5s;
 }
 
 .circleBox:hover .svgAni path {
@@ -380,6 +416,15 @@ section.journal .circleBox {
     z-index: -1;
 }
 
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 6055px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
 
 .inner .box ul {
     border-top: 1px solid #e6e6e6;
@@ -405,7 +450,93 @@ section.journal .circleBox {
     width: 78%;
     color: #888;
 }
-section.journal .moreBtn{
+
+section.journal .moreBtn {
     margin-left: 22%;
     /* margin-left: 22%; 이걸 위에다가 패딩을 주면 글씨만 움직이고 선은 따라오지 않으니까 전체에다가 이걸 주면 선이랑 같이 움직여. */
+}
+
+/* 미디어쿼리 -- 반응형  */
+@media (max-width:1720px) {
+    .innerheader {
+        max-width: 100%;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+
+    .innerheader .mainmenu .sns {
+        margin-left: 200px;
+    }
+
+    .visual .mainTxt {
+        margin-top: 150px;
+    }
+
+    .visual .mainTxt .tit {
+        font-size: 62px;
+    }
+
+    /* 위에 그냥 .innerheader 썼으니까 반응형을 나타낼 때 똑같이 써야해. 헤더의 에너헤드 ㄴㄴ */
+}
+
+@media(max-width:1400px) {
+
+    .innerheader .mainmenu .sns li {
+        margin: 0px 5px;
+    }
+
+    .visual .mainTxt {
+        margin-top: 100px;
+    }
+
+    .visual .mainTxt .tit {
+        font-size: 46px;
+    }
+
+    .visual .mainTxt .txt {
+        padding: 20px 0px 0px 0px;
+    }
+
+    .img.img img {
+        width: 100%;
+    }
+
+    /* img한 번 더 적어주면 그 줄의 명령이 힘이 세져. 두 단계보다 세 단계가 힘이 세서 그래. 잘 안되면 단계를 높여줘라. 또 안되면 .img를 또 써라.  
+아니면 뒤에  width: 100% !important;를 써줘라. 
+그런데 개발팀에서 important쓰지 말라 할 떄가 있어. 그러면 .img를 써주면 됨. */
+    /*  
+.img.img img{width: 100%;} 또는 .img. img{width: 100%  !important;}
+    */
+
+    section .inner {
+        width: 100%;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+
+    section.journal {
+        overflow: hidden;
+    }
+
+    section.journal .scroll {
+        display: none;
+        /* 태블릿에서는 스크롤이 아니라 손으로 하는거니까 스크롤이라는 것을 빼버리는 것이야.  */
+    }
+
+    section.journal .circleBox {
+        right: -10%;
+        top: 0;
+    }
+
+    section.journal .box img {
+        width: 90%;
+
+    }
+}
+
+@media (max-width:1024px) {
+    .innerheader {
+        height: 80px;
+        line-height: 80px;
+    }
 }

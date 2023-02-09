@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> 네가 어떤 기종을 사용하든 화면의 100%로 보여줘라! 
+        이게 엄청 중요해. 반응형할 때 이걸 안 쓰면 디바이스 기종마다 오차가 나타날 수 있는데 VScode에서 그냥 써줘서 다행이지만 나중에 일할 때 사건 터지면 백앤드로 가서 직접 쳐줘야 할지도 몰라. 연습할 때 직접 쳐보도록 하자. 자동완성 되지 않는 상황이 분명 나타난다. -->
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/font/stylesheet.css">
@@ -14,6 +16,14 @@
 
 <body>
     <div class="wrap">
+        <div class="menuOpen">
+            <button class="open">
+                <img src="img/open-icon.png" alt="메뉴열기">
+            </button>
+        </div><!-- //menuOpen -->
+
+
+
         <header>
             <div class="innerheader">
                 <h1 class="logo">
@@ -88,14 +98,14 @@
         </section><!-- //visual -->
         <section class="journal">
             <p class="scroll">scroll</p>
-            <div class="circleBox">
+            <div class="circleBox animate" data-animate="motion">
                 <svg class="svgAni" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1984.25 1984.25"
                     style="enable-background:new 0 0 1984.25 1984.25;" xml:space="preserve">
                     <style type="text/css">
                         .st0 {
                             fill: none;
-                            stroke: #F00;
+                            stroke: #f2f2f2;
                             stroke-width: 25;
                             stroke-miterlimit: 10;
                         }
