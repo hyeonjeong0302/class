@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <!DOCTYPE html> 
+    *지금부터 html5버전으로 문서가 만들어 질거야. 
+<html lang="en"> 
+    *언어는 영어야
+<head>
+<meta charset="UTF-8"> 
+    *UTF-8을 사용해서 전 세계에 모든 언어가 깨지지 않게 해줄거야.  
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    *equiv(equivalant 동등한) 호환을 어떻게 할 거이냐? 인터넷 익스플로러의 가장 최신 버전으로 보게 한다. 만약에 크롬 브우저가 있다면 크롬 브라우저가 웹페이지를 분석해서 보여준다는 의미. 고로 크롬엔진을 사용하라는 의미.
+    ie으로 화면을 열었다 할지라도 껍데기는 ie이고 알맹이는 크롬이라는 의미.
+    만약에 크롬이 깔려 있지 않다면 ie의 최신버전(최상위버전)으로 해석.
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    *화면 좌상단 끝에서 우하단 끝까지가 viewport인데 viewport의 사이즈를 사용자가 사용하는 device의 사이즈로 맞춘다. 기본적인 확대 정도는 1(100%), 확대 또는 축소되지 않은 상태로 출발하겠다. 
+-->
+    <meta name="author" content="부산광역시 ">
+    <meta name="description" content="부산광역시 대표홈페이지">
+    <meta name="keywords" content="부산광역시 부산시청 부산시광역시">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h2>사용자로부터 입력받기</h2>
+    <div class="첫째">
+        <form action="#">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="my-name">
+            <br /><br />
+            <label for="age">나이</label>
+            <input type="number" id="age" name="my-age">
+            <br /><br />
+            <button type="submit">제출</button>
+            <button type="reset">초기화</button>
+        </form>
+    </div><!-- //첫째 -->
+    <div class="둘째">
+        <form action="#">
+            <fieldset>
+                <!-- fieldset 없는  legend는 없어. ul, li와 비슷한 관계 -->
+                <legend>반장</legend>
+                <label for="name1">이름</label>
+                <input type="text" id="name1" name="name-1">
+                <br><br>
+                <label for="age1">나이</label>
+                <input type="number" id="age1" name="age-1">
+                <br><br>
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <!-- fieldset 없는  legend는 없어. ul, li와 비슷한 관계 -->
+                <legend>부반장</legend>
+                <label for="name2">이름</label>
+                <input type="text" id="name2" name="name-2">
+                <br><br>
+                <label for="age2">나이</label>
+                <input type="number" id="age2" name="age-2">
+                <br><br>
+            </fieldset>
+        </form>
+
+    </div><!-- //둘째 -->
+    <div class="셋째">
+        <form action="#">
+            <label for="txt">text</label>
+            <input type="text" id="txt" placeholder="5자 이하" maxlength="5">
+            <br><br>
+            <label for="pwd">password</label>
+            <input type="password" id="pwd" placeholder="4자 이상" minlength="4">
+            <br><br>
+
+            <label for="src">search</label>
+            <input type="search" id="src">
+            <br><br>
+            <button type="submit">제출</button>
+        </form>
+    </div><!-- //셋째 -->
+    <div class="넷째">
+        <label for="num">number</label>
+        <input type="number" id="num" min="0" max="10">
+        <label for="rg">range</label>
+        <input type="range" min="0" max="100" step="20">
+        <label for="dt">date</label>
+        <input type="date" id="dt" min="2020-01-01" max="2030-12-31">
+        <br><br>
+    </div><!-- //넷째 -->
+    <div class="다섯째">
+        <h3>메모</h3>
+        <label for="mg">메시지를 입력하세요</label>
+        <textarea name="msg" id="mg" cols="50" rows="10"></textarea>
+    </div><!-- //다섯째 -->
+    <div class="여섯째">
+        <h3>select, option 태그</h3>
+        <label for="lang">언어</label>
+        <select name="lang" id="lang">
+            <option value="">-- 언어 선택 --</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javaScript">자바스크립트</option>
+            <option value="React">리액트</option>
+        </select>
+        <br><br>
+        <h3>optgroup 태그</h3>
+        <label for="shopping">쇼핑목록</label>
+        <select name="shopping" id="shopping">
+            <optgroup label="과일">
+                <option value="F_apl">사과</option>
+                <option value="F_grp">포도</option>
+                <option value="F_org">오렌지</option>
+            </optgroup>
+            <optgroup label="채소">
+                <option value="v_crt">당근</option>
+                <option value="v_tmt">토마토</option>
+                <option value="v_ept">가지</option>
+            </optgroup>
+            <optgroup label="육류">
+                <option value="m_bef">소고기</option>
+                <option value="m_prk">돼지고기</option>
+                <option value="m_ckn">닭고기</option>
+            </optgroup>
+        </select>
+    </div><!-- //여섯째 -->
+    <div class="일곱째">
+        <!-- 단일선택 -->
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" name="gender" checked>남자
+            <input type="radio" name="gender">여자
+        </fieldset>
+        <fieldset>
+            <legend>지역선택</legend>
+            <input type="radio" name="area" checked>서울
+            <input type="radio" name="area" >경기
+            <input type="radio" name="area" >인천
+            <input type="radio" name="area" >부산
+            <input type="radio" name="area" >강원
+        </fieldset>
+        <!-- 복수선택 -->
+        <fieldset>
+            <legend>좋아하는 과일 모두 선택</legend>
+            <input type="checkbox" name="fruit" checked>사과
+            <input type="checkbox" name="fruit" checked>귤
+            <input type="checkbox" name="fruit" checked>배
+            <input type="checkbox" name="fruit" checked>용과
+            <input type="checkbox" name="fruit" checked>수박
+        </fieldset>
+        <!-- cheched 붙여놓으면 미리 선택되어 있음. -->
+    </div><!-- //일곱째 -->
+</body>
+
+</html>
