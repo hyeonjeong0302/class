@@ -6,61 +6,61 @@ font-family: 'Noto Sans KR', sans-serif;
 font-family: 'Handel Gothic';*/
 
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /* layout */
 
 body {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 14px;
-    color: #333;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 14px;
+	color: #333;
 }
 
 /* en, en_s라는 class가 붙으면 폰트로 요래 바뀌게 하는 것. */
 .en {
-    font-family: 'Handel Gothic';
+	font-family: 'Handel Gothic';
 }
 
 .en_s {
-    font-family: 'Dancing Script', cursive;
+	font-family: 'Dancing Script', cursive;
 }
 
 .clearfix::after {
-    content: "";
-    display: block;
-    clear: both;
+	content: "";
+	display: block;
+	clear: both;
 }
 
 /* menuOpen */
 .menuOpen {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 30px 20px;
+	position: fixed;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 30px 20px;
 }
 
 .menuOpen .open {
-    background: none;
-    border: 0;
+	background: none;
+	border: 0;
 }
 
 .menuOpen .open::before {
-    content: "";
-    position: absolute;
-    right: -100px;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #f5f5f5;
-    z-index: -1;
-    transition: 0.3s;
+	content: "";
+	position: absolute;
+	right: -100px;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #f5f5f5;
+	z-index: -1;
+	transition: 0.3s;
 }
 
 .menuOpen .open:hover:before {
-    right: 0;
+	right: 0;
 
 }
 
@@ -68,58 +68,58 @@ body {
 header {}
 
 .innerheader {
-    max-width: 1720px;
-    /* max-width: 1720px; 으로 하니까 1720px보다 작아질 수는 있어. 그래서 스크롤바 가로로 생기지 않아. 그런데 max 없이 width로만 하면 1720px보다 작아지면 스크롤바가 생겨. */
-    margin: 0 auto;
-    height: 110px;
-    line-height: 110px;
+	max-width: 1720px;
+	/* max-width: 1720px; 으로 하니까 1720px보다 작아질 수는 있어. 그래서 스크롤바 가로로 생기지 않아. 그런데 max 없이 width로만 하면 1720px보다 작아지면 스크롤바가 생겨. */
+	margin: 0 auto;
+	height: 110px;
+	line-height: 110px;
 }
 
 .innerheader .logo {
-    float: left;
+	float: left;
 
 }
 
 .innerheader .logo a {
-    display: block;
-    width: 100%;
-    height: 100%;
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 
 .innerheader .logo a img {}
 
 .innerheader .mainmenu {
-    float: right;
+	float: right;
 }
 
 .innerheader .mainmenu .gnb {
-    float: left;
+	float: left;
 }
 
 .innerheader .mainmenu .gnb li {
-    float: left;
-    margin: 0 20px;
+	float: left;
+	margin: 0 20px;
 }
 
 .innerheader .mainmenu .gnb li a {
-    display: block;
-    color: #555;
+	display: block;
+	color: #555;
 }
 
 .innerheader .mainmenu .sns {
-    margin-left: 300px;
-    /* margin-left: 300px;  gnb가 옆으로 밀리게 함. */
-    float: left;
+	margin-left: 300px;
+	/* margin-left: 300px;  gnb가 옆으로 밀리게 함. */
+	float: left;
 }
 
 .innerheader .mainmenu .sns li {
-    float: left;
-    margin: 0 20px;
+	float: left;
+	margin: 0 20px;
 }
 
 .innerheader .mainmenu .sns li a {
-    display: block;
-    padding: 0 10px;
+	display: block;
+	padding: 0 10px;
 }
 
 .innerheader .mainmenu .sns li a img {}
@@ -127,69 +127,69 @@ header {}
 
 /* visual */
 .visual {
-    max-width: 1720px;
-    margin: 0 auto;
+	max-width: 1720px;
+	margin: 0 auto;
 }
 
 .visual .mainImg {
-    float: left;
-    width: 50%;
+	float: left;
+	width: 50%;
 }
 
 .visual .mainImg img {
-    width: 90%;
+	width: 90%;
 }
 
 .visual .mainImg .img img {}
 
 .visual .mainTxt {
-    float: left;
-    width: 50%;
-    margin-top: 180px;
+	float: left;
+	width: 50%;
+	margin-top: 180px;
 }
 
 .visual .mainTxt .tit {
-    font-size: 72px;
+	font-size: 72px;
 
 }
 
 .visual .mainTxt .txt {
-    padding: 50px 0 0 70px;
+	padding: 50px 0 0 70px;
 }
 
 /* journal */
 section.journal {
-    position: relative;
-    padding: 190px 0 120px;
+	position: relative;
+	padding: 190px 0 120px;
 }
 
 section.journal .scroll {
-    /* scroll글자 */
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    font-size: 10px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    writing-mode: vertical-rl;
-    /* writing-mode: vertical-rl; 글씨를 수직으로 바꿔주는데 오른쪽에서 왼쪽으로 간다. 자주안씀 */
-    padding-top: 90px;
+	/* scroll글자 */
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+	font-size: 10px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	writing-mode: vertical-rl;
+	/* writing-mode: vertical-rl; 글씨를 수직으로 바꿔주는데 오른쪽에서 왼쪽으로 간다. 자주안씀 */
+	padding-top: 90px;
 }
 
 section.journal .scroll::before {
-    /* 비포를 줄거냐 애프터를 줄거냐. 상관없지만 clear:both;는 반드시 애프터에 줘야해. */
-    content: "";
-    position: absolute;
-    height: 75px;
-    width: 1px;
-    background-color: #333;
-    top: 0;
-    left: 6px;
+	/* 비포를 줄거냐 애프터를 줄거냐. 상관없지만 clear:both;는 반드시 애프터에 줘야해. */
+	content: "";
+	position: absolute;
+	height: 75px;
+	width: 1px;
+	background-color: #333;
+	top: 0;
+	left: 6px;
 }
 
 section.journal .box .img {
-    padding-top: 100px;
+	padding-top: 100px;
 }
 
 
@@ -218,7 +218,7 @@ section.journal .box .img {
 
 
 .visual .mainTxt .tit span.gray {
-    color: #ccc;
+	color: #ccc;
 }
 
 .visual .mainTxt .tit .en_s {}
@@ -227,74 +227,74 @@ section.journal .box .img {
 
 /* inner - 넓이에 대한 가이드  */
 section .inner {
-    width: 1320px;
-    margin: 0 auto;
-    overflow: hidden;
-    /* overflow: hidden;  부모가 깨지는 것을 막기 위해 부모에다가 이걸 해줘. */
+	width: 1320px;
+	margin: 0 auto;
+	overflow: hidden;
+	/* overflow: hidden;  부모가 깨지는 것을 막기 위해 부모에다가 이걸 해줘. */
 }
 
 section .inner .box {
-    float: left;
-    width: 50%;
+	float: left;
+	width: 50%;
 }
 
 /* 타이틀, 텍스트  */
 .tit {
-    font-size: 50px;
-    line-height: 1.1;
-    font-weight: normal;
+	font-size: 50px;
+	line-height: 1.1;
+	font-weight: normal;
 }
 
 .tit span {
-    display: block;
+	display: block;
 }
 
 .tit span b {
-    font-weight: normal;
+	font-weight: normal;
 }
 
 .tit .en_s {
-    font-size: 22px;
-    font-weight: normal;
+	font-size: 22px;
+	font-weight: normal;
 }
 
 .txt p {
-    color: #888;
-    line-height: 1.6;
-    margin-bottom: 10px;
+	color: #888;
+	line-height: 1.6;
+	margin-bottom: 10px;
 }
 
 .txt p b {
-    font-weight: normal;
+	font-weight: normal;
 }
 
 /* readmore */
 .moreBtn {
-    position: relative;
-    display: inline-block;
-    color: #333;
-    margin-top: 20px;
-    padding-left: 48px;
-    transform: skewX(-15deg) translateX(5px);
-    /* transform: skewX(-15deg) 여기 사이에 반드시 띄우고, 사이에 ,금지 translateX(5px); */
-    /* transform: skewX(-15deg); 글자 기울게*/
-    transition: 0.3s;
+	position: relative;
+	display: inline-block;
+	color: #333;
+	margin-top: 20px;
+	padding-left: 48px;
+	transform: skewX(-15deg) translateX(5px);
+	/* transform: skewX(-15deg) 여기 사이에 반드시 띄우고, 사이에 ,금지 translateX(5px); */
+	/* transform: skewX(-15deg); 글자 기울게*/
+	transition: 0.3s;
 }
 
 .moreBtn:hover {
-    transform: skewX(0deg) translateX(0px);
-    font-weight: bold;
+	transform: skewX(0deg) translateX(0px);
+	font-weight: bold;
 
 }
 
 .moreBtn::before {
-    content: "";
-    width: 42px;
-    height: 1px;
-    background-color: #333;
-    position: absolute;
-    left: 0;
-    top: 52%;
+	content: "";
+	width: 42px;
+	height: 1px;
+	background-color: #333;
+	position: absolute;
+	left: 0;
+	top: 52%;
 
 }
 
@@ -302,39 +302,39 @@ section .inner .box {
 
 /* 이미지 애니메이션 */
 .img.animate__motion {
-    position: relative;
-    animation: imgAni 1s;
+	position: relative;
+	animation: imgAni 1s;
 }
 
 @keyframes imgAni {
-    0% {
-        transform: translateY(50px);
-    }
+	0% {
+		transform: translateY(50px);
+	}
 
-    100% {
-        transform: translateY(0px);
-    }
+	100% {
+		transform: translateY(0px);
+	}
 }
 
 .img.animate__motion::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 0%;
-    background-color: #fff;
-    animation: mask 1.2s;
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 0%;
+	background-color: #fff;
+	animation: mask 1.2s;
 }
 
 @keyframes mask {
-    0% {
-        height: 90%;
-    }
+	0% {
+		height: 90%;
+	}
 
-    100% {
-        height: 0;
-    }
+	100% {
+		height: 0;
+	}
 }
 
 /* //이미지 애니메이션 */
@@ -343,33 +343,33 @@ section .inner .box {
 .tit.animate__motion {}
 
 .tit.animate__motion span {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .tit.animate__motion span b {
-    animation: textAni 1.3s;
-    display: block;
+	animation: textAni 1.3s;
+	display: block;
 }
 
 @keyframes textAni {
-    0% {
-        opacity: 0;
-    }
+	0% {
+		opacity: 0;
+	}
 
-    30% {
-        opacity: 0;
-        transform: translateY(40px) skewY(8deg);
-        transform-origin: left top;
-    }
+	30% {
+		opacity: 0;
+		transform: translateY(40px) skewY(8deg);
+		transform-origin: left top;
+	}
 }
 
 .txt.animate__motion p {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .txt.animate__motion p b {
-    display: block;
-    animation: textAni 2s;
+	display: block;
+	animation: textAni 2s;
 }
 
 /* //텍스트 애니메이션 */
@@ -380,24 +380,24 @@ section .inner .box {
 .circleBox .svgAni {}
 
 .circleBox .svgAni path {
-    /* stroke-dasharray: 6056px; */
-    /* stroke-dasharray: 50px 100px;  첫 번째 값은 점선 빨간 부분의 길이, 두번째 값은 점선 사이의 길이
+	/* stroke-dasharray: 6056px; */
+	/* stroke-dasharray: 50px 100px;  첫 번째 값은 점선 빨간 부분의 길이, 두번째 값은 점선 사이의 길이
     한 번만 적으면 두 가지에 같은 값이 적용.*/
-    /* stroke-dashoffset: 0; */
-    /* stroke-dashoffset: 50px; 원의 위치를 변경... 그래서 선의 위치가 변경. 해보면 알으 */
-    /* transition: 0.5s; */
-    stroke-dasharray: 6055px;
-    stroke-dashoffset: 0;
+	/* stroke-dashoffset: 0; */
+	/* stroke-dashoffset: 50px; 원의 위치를 변경... 그래서 선의 위치가 변경. 해보면 알으 */
+	/* transition: 0.5s; */
+	stroke-dasharray: 6055px;
+	stroke-dashoffset: 0;
 }
 
 .circleBox.animate__motion .svgAni path {
-    animation: dash 1.5s;
+	animation: dash 1.5s;
 }
 
 .circleBox:hover .svgAni path {
-    /* stroke-dashoffset: 6056px; */
-    /* stroke-dashoffset: 6056px; 요로케 하면 선이 삭 없어져. */
-    /* 선이 생기게 하려면 반대로 하면 됨. 
+	/* stroke-dashoffset: 6056px; */
+	/* stroke-dashoffset: 6056px; 요로케 하면 선이 삭 없어져. */
+	/* 선이 생기게 하려면 반대로 하면 됨. 
     .circleBox .svgAni path{
         stroke-dashoffset: 6056px;
     }
@@ -408,135 +408,262 @@ section .inner .box {
 }
 
 section.journal .circleBox {
-    position: absolute;
-    /* 저 위에 섹션 저널에 포지션 잡아줌. */
-    width: 700px;
-    right: 13%;
-    top: 100px;
-    z-index: -1;
+	position: absolute;
+	/* 저 위에 섹션 저널에 포지션 잡아줌. */
+	width: 700px;
+	right: 13%;
+	top: 100px;
+	z-index: -1;
 }
 
 @keyframes dash {
-    0% {
-        stroke-dashoffset: 6055px;
-    }
+	0% {
+		stroke-dashoffset: 6055px;
+	}
 
-    100% {
-        stroke-dashoffset: 0;
-    }
+	100% {
+		stroke-dashoffset: 0;
+	}
 }
 
 .inner .box ul {
-    border-top: 1px solid #e6e6e6;
-    padding-top: 40px;
-    margin-top: 40px;
-    /* padding-top: 40px;margin-top: 40px; ul기준으로 패딩은 내 공간 안이니까 선 밑에 패딩 40이 생기고, ul기준으로 마진은 내 공간 바깥의 공간이니까 선위에 마진 40이 생겨서 선이 중간에 위치하게 됨.  */
+	border-top: 1px solid #e6e6e6;
+	padding-top: 40px;
+	margin-top: 40px;
+	/* padding-top: 40px;margin-top: 40px; ul기준으로 패딩은 내 공간 안이니까 선 밑에 패딩 40이 생기고, ul기준으로 마진은 내 공간 바깥의 공간이니까 선위에 마진 40이 생겨서 선이 중간에 위치하게 됨.  */
 }
 
 .inner .box ul li {
-    margin-bottom: 30px;
-    overflow: hidden;
-    /* overflow: hidden; 모든 li에게 약주면 힘드니까 부모에게 이걸 주면 정리가 됨. */
+	margin-bottom: 30px;
+	overflow: hidden;
+	/* overflow: hidden; 모든 li에게 약주면 힘드니까 부모에게 이걸 주면 정리가 됨. */
 }
 
 .inner .box ul li h3 {
-    float: left;
-    width: 22%;
-    font-size: 15px;
+	float: left;
+	width: 22%;
+	font-size: 15px;
 }
 
 .inner .box ul li p {
-    float: left;
-    width: 78%;
-    color: #888;
+	float: left;
+	width: 78%;
+	color: #888;
 }
 
 section.journal .moreBtn {
-    margin-left: 22%;
-    /* margin-left: 22%; 이걸 위에다가 패딩을 주면 글씨만 움직이고 선은 따라오지 않으니까 전체에다가 이걸 주면 선이랑 같이 움직여. */
+	margin-left: 22%;
+	/* margin-left: 22%; 이걸 위에다가 패딩을 주면 글씨만 움직이고 선은 따라오지 않으니까 전체에다가 이걸 주면 선이랑 같이 움직여. */
 }
 
 /* 미디어쿼리 -- 반응형  */
 @media (max-width:1720px) {
-    .innerheader {
-        max-width: 100%;
-        padding: 0 30px;
-        box-sizing: border-box;
-    }
+	.innerheader {
+		max-width: 100%;
+		padding: 0 30px;
+		box-sizing: border-box;
+	}
 
-    .innerheader .mainmenu .sns {
-        margin-left: 200px;
-    }
+	.innerheader .mainmenu .sns {
+		margin-left: 200px;
+	}
 
-    .visual .mainTxt {
-        margin-top: 150px;
-    }
+	.visual .mainTxt {
+		margin-top: 150px;
+	}
 
-    .visual .mainTxt .tit {
-        font-size: 62px;
-    }
+	.visual .mainTxt .tit {
+		font-size: 62px;
+	}
 
-    /* 위에 그냥 .innerheader 썼으니까 반응형을 나타낼 때 똑같이 써야해. 헤더의 에너헤드 ㄴㄴ */
+	/* 위에 그냥 .innerheader 썼으니까 반응형을 나타낼 때 똑같이 써야해. 헤더의 에너헤드 ㄴㄴ */
 }
 
 @media(max-width:1400px) {
 
-    .innerheader .mainmenu .sns li {
-        margin: 0px 5px;
-    }
+	.innerheader .mainmenu .sns li {
+		margin: 0px 5px;
+	}
 
-    .visual .mainTxt {
-        margin-top: 100px;
-    }
+	.visual .mainTxt {
+		margin-top: 100px;
+	}
 
-    .visual .mainTxt .tit {
-        font-size: 46px;
-    }
+	.visual .mainTxt .tit {
+		font-size: 46px;
+	}
 
-    .visual .mainTxt .txt {
-        padding: 20px 0px 0px 0px;
-    }
+	.visual .mainTxt .txt {
+		padding: 20px 0px 0px 0px;
+	}
 
-    .img.img img {
-        width: 100%;
-    }
+	.img.img img {
+		width: 100%;
+	}
 
-    /* img한 번 더 적어주면 그 줄의 명령이 힘이 세져. 두 단계보다 세 단계가 힘이 세서 그래. 잘 안되면 단계를 높여줘라. 또 안되면 .img를 또 써라.  
+	/* img한 번 더 적어주면 그 줄의 명령이 힘이 세져. 두 단계보다 세 단계가 힘이 세서 그래. 잘 안되면 단계를 높여줘라. 또 안되면 .img를 또 써라.  
 아니면 뒤에  width: 100% !important;를 써줘라. 
 그런데 개발팀에서 important쓰지 말라 할 떄가 있어. 그러면 .img를 써주면 됨. */
-    /*  
+	/*  
 .img.img img{width: 100%;} 또는 .img. img{width: 100%  !important;}
     */
 
-    section .inner {
-        width: 100%;
-        padding: 0 30px;
-        box-sizing: border-box;
-    }
+	section .inner {
+		width: 100%;
+		padding: 0 30px;
+		box-sizing: border-box;
+	}
 
-    section.journal {
-        overflow: hidden;
-    }
+	section.journal {
+		overflow: hidden;
+	}
 
-    section.journal .scroll {
-        display: none;
-        /* 태블릿에서는 스크롤이 아니라 손으로 하는거니까 스크롤이라는 것을 빼버리는 것이야.  */
-    }
+	section.journal .scroll {
+		display: none;
+		/* 태블릿에서는 스크롤이 아니라 손으로 하는거니까 스크롤이라는 것을 빼버리는 것이야.  */
+	}
 
-    section.journal .circleBox {
-        right: -10%;
-        top: 0;
-    }
+	section.journal .circleBox {
+		right: -10%;
+		top: 0;
+	}
 
-    section.journal .box img {
-        width: 90%;
+	section.journal .box img {
+		width: 90%;
 
-    }
+	}
 }
 
 @media (max-width:1024px) {
-    .innerheader {
-        height: 80px;
-        line-height: 80px;
-    }
+	.innerheader {
+		height: 80px;
+		line-height: 80px;
+	}
+
+	/* .innerheader .mainmenu 요렇게 하거나 .innerheader .mainmenu{};요렇게 하면 그 줄 위까지는 실행되지만 그 아래부터는 실행되지 않아. 조건문은 반드시 정해진 형식에 의해서만 실행되므로 잘못 작성하지 않게 주의해야해.  */
+	.innerheader .mainmenu {
+		display: none;
+	}
+
+	.menuOpen {
+		position: absolute;
+		top: 0;
+		transform: none;
+		padding: 10px 20px;
+	}
+
+	.menuOpen .open::before {
+		display: none;
+	}
+
+	.visual .mainImg {
+		float: none;
+		width: 100%;
+	}
+
+	.visual .mainTxt {
+		float: none;
+		width: 100%;
+		margin-top: 50px;
+	}
+
+	section .inner .box {
+		float: none;
+		width: 100%;
+	}
+
+	section.journal {
+		position: relative;
+		padding: 80px 0;
+	}
+
+	section.journal .circleBox {
+		top: 200px;
+	}
+
+	section.journal .box .img {
+		padding-top: 0;
+		width: 80%;
+		margin: 0 auto 50px;
+	}
+}
+
+@media(max-width:767px) {
+	body {
+		font-size: 13px;
+	}
+
+	.innerheader {
+		height: 60px;
+		line-height: 60px;
+	}
+
+	.menuOpen .open img {
+		height: 38px;
+	}
+
+	.visual {
+		padding: 0 20px;
+	}
+
+	.tit.tit.tit {
+		font-size: 30px;
+	}
+
+	/* .tit.tit.tit{font-size: 30px;} 
+	.tit.tit.tit 붙여서 해야해. 그렇지 않고 띄워서 쓰면 아니돼. */
+
+	section .inner {
+		padding: 0 20px;
+	}
+
+	section.journal {
+		padding: 50px 0;
+	}
+
+	section.journal .circleBox {
+		top: 10%;
+		right: -4%;
+	}
+
+	section.journal .box img {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+	section.journal .box .img {
+		width: 100%;
+	}
+
+	.inner .box ul {
+		margin-top: 30px;
+	}
+
+	.inner .box ul li {
+		margin-bottom: 20px;
+	}
+
+	.inner .box ul li h3 {
+		width: 100%;
+		/* width: 100%; 이렇게 해도 되고 플롯을 논으로 해도 됨. */
+	}
+
+	.inner .box ul li p {
+		width: 100%;font-size: 12px;
+	}
+	section.journal .moreBtn{
+		margin-left: 0;
+	}
+}
+
+@media(max-width:320px){
+	.tit .en_s{
+		font-size: 16px;
+	}
+	.tit.tit.tit{
+		font-size: 27px;
+	}
+	.inner .box ul li h3{
+		font-size: 14px;
+	}
 }
