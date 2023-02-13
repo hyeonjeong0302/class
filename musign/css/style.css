@@ -225,6 +225,55 @@ section.journal .box .img {
 
 .visual .mainTxt {}
 
+
+/* service */
+section.service {
+	padding: 190px 0;
+}
+
+section.service .box {}
+
+section.service .box .img {
+	margin-top: 60px;
+}
+
+section.service .box.design {
+	/* padding은 -가 있을 수가 없어. 그런데 margin은 내 바깥의 영역이기 때문에 -가능.  이 -40%는 누구에 대한 40%일까?!
+	padding이나 margin의 %의 기준은 상하좌우 모두 내 부모의 높이와 너비.
+	height:30%, width:30%일 때의 기준은 부모의 높이, 너비. 
+	%일 경우이고 그냥 padding: 20px이렇게 주면 강제로 값을 준 것이기 때문에 기준값이 없는 거야.  */
+	margin-top: -40%;
+	width: 45%;
+	border-top: 1px solid #c4e5ea;
+	padding-top: 60px;
+}
+
+section.service .box.design .tit {
+	font-size: 30px;
+	line-height: 1.4;
+	margin-bottom: 30px;
+}
+
+/* customer */
+section.customer {
+	background: url(../img/img_04.jpg)no-repeat center;
+	background-size: cover;
+	text-align: center;
+	/* text-align: center; 밑에 따로 줘도 되지만 이렇게 해야 밑에 둘 다에게 적용되지. */
+	padding: 160px 0;
+
+}
+
+section.customer .tit {
+	color: #fff;
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+
+section.customer .txt {
+	color: #777;
+}
+
 /* inner - 넓이에 대한 가이드  */
 section .inner {
 	width: 1320px;
@@ -456,7 +505,7 @@ section.journal .moreBtn {
 	/* margin-left: 22%; 이걸 위에다가 패딩을 주면 글씨만 움직이고 선은 따라오지 않으니까 전체에다가 이걸 주면 선이랑 같이 움직여. */
 }
 
-/* 미디어쿼리 -- 반응형  */
+/* ---------------------미디어쿼리 ------------- 반응형  */
 @media (max-width:1720px) {
 	.innerheader {
 		max-width: 100%;
@@ -586,6 +635,41 @@ section.journal .moreBtn {
 		width: 80%;
 		margin: 0 auto 50px;
 	}
+
+	section.service {
+		padding: 80px 0;
+	}
+
+	section.service .txt {
+		margin-top: 20px;
+	}
+
+	section.service .box .img {
+		margin-top: 50px;
+		width: 70%;
+	}
+
+	section.service .box.design {
+		margin-top: 50px;
+		width: 100%;
+	}
+
+	section.service .box.design .img {
+		width: 70%;
+
+	}
+
+	section.service .box.design .tit {
+		font-size: 35px;
+	}
+
+	section.customer {
+		padding: 120px 0;
+	}
+
+	section.customer .tit {
+		font-size: 30px;
+	}
 }
 
 @media(max-width:767px) {
@@ -649,21 +733,52 @@ section.journal .moreBtn {
 	}
 
 	.inner .box ul li p {
-		width: 100%;font-size: 12px;
+		width: 100%;
+		font-size: 12px;
 	}
-	section.journal .moreBtn{
+
+	section.journal .moreBtn {
 		margin-left: 0;
 	}
+
+	section.service {
+		padding: 50px 0;
+	}
+
+	section.service .box .img {
+		margin-top: 30px;
+		width: 100%;
+	}
+
+	section.service .box.design .img {
+		width: 100%;
+	}
+
+	section.service .box.design .tit {
+		font-size: 25px;
+		margin-bottom: 10px;
+	}
+
+	section.customer {
+		padding: 80px 20px;
+
+	}
+	section.customer .tit.tit{
+		font-size: 25px;
+	}
+
 }
 
-@media(max-width:320px){
-	.tit .en_s{
+@media(max-width:320px) {
+	.tit .en_s {
 		font-size: 16px;
 	}
-	.tit.tit.tit{
+
+	.tit.tit.tit {
 		font-size: 27px;
 	}
-	.inner .box ul li h3{
+
+	.inner .box ul li h3 {
 		font-size: 14px;
 	}
 }

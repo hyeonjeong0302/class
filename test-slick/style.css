@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    /* list-style: none; li 앞에 점 안 찍히게. */
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    /* text-decoration: none; 텍스트 밑에 밑줄 없게. */
+}
+
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+body {
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8) url(img/Cover_anni40-50_1920x800.jpg)no-repeat;
+    background-size: cover;
+    /* background-size: cover; 이걸 안 하면 화면 밑에 검은색이 생기는데 이걸 하면 위의 이미지가 화면 전체를 덮음. */
+    background-blend-mode: hue;
+    /* background-blend-mode: hue; 배경 이미지와 배경 색깔을 섞는 것. */
+}
+
+.wrap {}
+
+/* header */
+header {
+    border-bottom: 1px solid #ddd;
+    height: 100px;
+}
+
+header .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container .logo {width: 150px;}
+
+header .container .logo a {}
+
+header .container .logo a img {width: 100%;}
+
+header .container .menu_wrap {
+}
+
+header .container .menu_wrap ul {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    /* width: 800px; 이걸 하지 않으면 뛰어놀 공간이 지정되지 ㅇ낳은 상태이기 때문에 justify-content: space-between;를 해도 옆으로 퍼지지 않아. 
+     */
+}
+
+header .container .menu_wrap ul li {}
+
+header .container .menu_wrap ul li a {}
+
+header .container .search {}
+
+header .container .search a {}
+
+header .container .search a i {}
