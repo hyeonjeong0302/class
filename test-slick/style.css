@@ -45,14 +45,17 @@ header .container {
     align-items: center;
 }
 
-header .container .logo {width: 150px;}
+header .container .logo {
+    width: 150px;
+}
 
 header .container .logo a {}
 
-header .container .logo a img {width: 100%;}
-
-header .container .menu_wrap {
+header .container .logo a img {
+    width: 100%;
 }
+
+header .container .menu_wrap {}
 
 header .container .menu_wrap ul {
     display: flex;
@@ -71,3 +74,102 @@ header .container .search {}
 header .container .search a {}
 
 header .container .search a i {}
+
+.main {
+    margin-top: 5%;
+}
+
+.main .slick-slide {
+    display: flex;
+    position: relative;
+}
+
+.left_area {
+    width: 50%;
+    height: 80vh;
+}
+
+.left_area .vespa_img {
+    width: 120%;
+    padding-top: 160px;
+}
+
+.slick-active .left_area .vespa_img {
+	animation: fadeInL 0.5s 0.5s both;
+	/* both를 주면 애니메이션이 원래 자리에 있다가 팍 튕겨서 다시 나타나는 느낌이다. 이걸 줘야해. 애니메이션이 0%인 자리에 있다가 100%로 되어라 뭐 이런 뜻이야. */
+}
+
+.left_area .vespa_img img {
+    width: 100%;
+}
+
+.left_area .vespa_tit {
+    position: absolute;
+    left: 0;
+    top: 120px;
+    z-index: -1;
+}
+
+.left_area .vespa_tit h2 {
+    font-size: 135px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.left_area .vespa_tit p {
+    font-size: 19px;
+    color: #fff;
+    letter-spacing: 19px;
+    text-align: center;
+}
+
+.right_area {
+    width: 50%;
+    height: 80vh;
+    background-color: blue;
+}
+
+.main .slick-arrow {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/* keyframes */
+
+@keyframes fadeInR {
+    0% {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInL {
+    0% {
+        transform: translateX(-150%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInT {
+    0% {
+        transform: translateY(-150%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
