@@ -92,11 +92,13 @@ header .container .search a i {}
 .left_area .vespa_img {
     width: 120%;
     padding-top: 160px;
+    opacity: 0;
+    /* opacity: 0; 이걸 하면 슬릭이 좀 덜 튕김. */
 }
 
 .slick-active .left_area .vespa_img {
-	animation: fadeInL 0.5s 0.5s both;
-	/* both를 주면 애니메이션이 원래 자리에 있다가 팍 튕겨서 다시 나타나는 느낌이다. 이걸 줘야해. 애니메이션이 0%인 자리에 있다가 100%로 되어라 뭐 이런 뜻이야. */
+    animation: fadeInL 0.5s 0.5s both;
+    /* both를 주면 애니메이션이 원래 자리에 있다가 팍 튕겨서 다시 나타나는 느낌이다. 이걸 줘야해. 애니메이션이 0%인 자리에 있다가 100%로 되어라 뭐 이런 뜻이야. */
 }
 
 .left_area .vespa_img img {
@@ -109,6 +111,15 @@ header .container .search a i {}
     top: 120px;
     z-index: -1;
 }
+
+.main .slick-active .vespa_tit {
+    animation: fadeInT 0.5s 0.9s both;
+    /* animation: fadeInT 0.5s 0.9s both;
+    both는 시작지점을 0%인 지점에서 시작해서 100%프로 되는 시점에서 멈춰라. 뭐 이런 뜻. */
+}
+
+/* .main .slick-active .vespa_tit {} 
+.main을 붙여야 구분이 돼. 왜냐면 . slick-active는 여러 개가 될 수 있잖아. */
 
 .left_area .vespa_tit h2 {
     font-size: 135px;
@@ -125,15 +136,129 @@ header .container .search a i {}
 .right_area {
     width: 50%;
     height: 80vh;
-    background-color: blue;
+    color: #fff;
+    padding-top: 20%;
+    padding-left: 10%;
+    box-sizing: border-box;
+}
+
+.right_area .middle_txt {}
+
+.right_area .middle_txt ul {
+    padding-left: 5%;
+}
+
+.right_area .middle_txt ul li {
+    padding-left: 10px;
+    position: relative;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.main .slick-active .right_area .middle_txt ul li{
+    animation: fadeInL 0.5s 1s both;
+
+}
+.main .slick-active .right_area .middle_txt ul li:last-child {
+    animation-delay: 1.2s;
+    /* /애니메이션 안되는 이유 찾기 */
+}
+
+.right_area .middle_txt ul li::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.right_area .bottom_area {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.right_area .bottom_area .custom_btn {
+    border: 2px solid #fff;
+}
+
+.main .slick-active .right_area .bottom_area .custom_btn {
+    animation: fadeInT 0.5s 1.4s both;
+}
+
+.right_area .bottom_area .custom_btn a {
+    display: block;
+    padding: 10px 20px;
+}
+
+.right_area .bottom_area .custom_btn a i {}
+
+
+.main .slick-active .right_area .bottom_area .down_btn {
+    animation: fadeInT 0.5s 1.5s both;
+}
+
+.right_area .bottom_area .down_btn {
+    background-color: #38a385;
+}
+
+.right_area .bottom_area .down_btn a {
+    display: block;
+    padding: 10px 20px;
+}
+
+.main .slick-active .right_area .bottom_area .price span {
+    animation: fadeInR 0.5s 1.6s both;
+    display: block;
+    /* span은 block요소라서 display:block를 해야 애니메이션이 작동돼. 그런데 span말고 그냥 .price까지만 잡아도 됨. */
+}
+
+.right_area .bottom_area .price {}
+
+.right_area .bottom_area .price span {
+    font-size: 24px;
+    line-height: 42px;
+    color: #fff;
 }
 
 .main .slick-arrow {
     position: absolute;
-    left: 0;
+    left: -2%;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
+    font-size: 0;
+    visibility: hidden;
+    /* 버튼의 흔적조차 없어지게ㅋㅋㅋ 그러고나서 밑에다가 사이즈랑 막 준다. */
+}
+
+.slick-arrow.slick-next {
+    left: auto;
+    /* left: auto; 위에 레프트가 0이야. 그걸 끊어내고 해야해!!! */
+    right: -2%;
+}
+
+
+.slick-arrow.slick-next::after {
+    content: "\f054";
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    visibility: visible;
+    font-size: 50px;
+    color: #38a385;
+}
+
+.slick-arrow.slick-prev::after {
+    content: "\f053";
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    visibility: visible;
+    font-size: 50px;
+    color: #38a385;
 }
 
 /* keyframes */

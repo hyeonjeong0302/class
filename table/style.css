@@ -1,0 +1,241 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: 900px;
+  margin: 0 auto;
+  padding: 10% 0;
+}
+
+.wrap>div {
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+}
+
+.table1 {
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.table1 table {
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.table1 table th {
+  border: 1px solid #ccc;
+}
+
+.table1 table tr {
+  border: 1px solid #ccc;
+}
+
+.table1 table tr td {
+  border: 1px solid #ccc;
+}
+
+.table1-2 {}
+
+.table1-2 table {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.table1-2 table tr {}
+
+.table1-2 table tr th {
+  border: 1px solid #ccc;
+
+}
+
+.table1-2 table tr td {
+  border: 1px solid #ccc
+}
+
+.table2 {}
+
+.table2 table {
+  width: 100%;
+}
+
+.table2 tr:nth-child(1) {
+  border-bottom: 3px double #000;
+}
+
+.table2 table,
+.table2 th,
+.table2 td {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  background-color: chartreuse;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.table2 th:nth-child(1) {
+  width: 20%;
+}
+
+.table2 th:nth-child(2) {
+  width: 60%;
+}
+
+.table2 th:nth-child(3) {
+  width: 20%;
+}
+
+.table2 tr:nth-child(2) {
+  height: 100px;
+}
+
+.table3,
+.table4,
+.table5,
+.table6,
+.table7 {}
+
+.table3 table {
+  width: 100%;
+}
+
+.table3 table,
+.table3 td,
+.table3 th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+.table4 table {
+  width: 100%;
+}
+
+.table4 table,
+.table4 td,
+.table4 th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+.table5 table {
+  width: 100%;
+}
+
+.table5 table,
+.table5 td,
+.table5 th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+.table6 table {
+  width: 100%;
+}
+
+.table6 table,
+.table6 td,
+.table6 th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+.table7 table {
+  width: 100%;
+}
+
+.table7 table,
+.table7 td,
+.table7 th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+.table8 table {
+  width: 100%;
+}
+
+.table8 table,
+.table8 td,
+.table8 th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+.table9 table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.table9 table tr {
+  border-bottom: 1px solid #ccc0;
+}
+
+.table9 table tr:hover {
+  background-color: chartreuse;
+}
+
+.table9 table td,
+.table9 table th {
+  padding: 15px;
+}
+
+.table9 table,
+.table9 td,
+.table9 th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+.table10 table {
+  width: 100%;
+}
+
+.table10 table,
+.table10 td,
+.table10 th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+.table10 colgroup col:nth-child(1) {
+  background-color: skyblue;
+  /* width: 20%; 요로케도 가능. 그런데 수업시간에는 안 한다고 해서 주석처리함. */
+}
+
+.table10 colgroup col:nth-child(2) {
+  background-color: pink;
+  /* width: 60%; */
+}
+
+.table10 colgroup col:nth-child(3) {
+  background-color: rgb(214, 245, 76);
+  /* width: 20%; */
+}
+
+/* 행의 홀수 짝수에 특정 값을 주는 방법 */
+/* 짝수를 부르는 방법 */
+/* .table8 tr:nth-child(even){
+  background-color: rgba(150,212,212,0.4);
+} */
+.table8 tr:nth-child(2n) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+
+/* 홀수를 부르는 방법 */
+/* .table8 tr:nth-child(odd){
+  background-color: rgba(239,209,172,0.4);
+} */
+.table8 tr:nth-child(2n+1) {
+  background-color: rgba(239, 209, 172, 0.4);
+}
+
+/* 열의 홀수 짝수에 특정 값을 주는 방법 */
+.table8 td:nth-child(even),
+.table8 th:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
