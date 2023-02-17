@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+ * {margin: 0;padding: 0;}  
+ ul,ol,li{list-style: none;}
+
+.clear::after{content: ""; clear:both; 
+display: block;}
+
+
+#전체 {
+  background-color: coral;
+  padding: 20px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+#전체 .첫째자식 {
+  background-color: chartreuse;
+ 
+  padding: 20px;
+}
+
+#전체 .첫째자식 .첫째손자 {
+  background-color: darkmagenta;
+  height: 200px;
+  background-image: url(../img/img1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#전체 .첫째자식 .wrap{
+  position: relative;
+}
+
+#전체 .첫째자식 .첫손2{
+  background-color: green;
+  opacity: 0;/* 투명도 */
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  transition: 0.3s;
+  background-image: url(../img/img2.jpg);
+}
+
+#전체 .첫째자식:hover .첫손2{
+  opacity: 1;
+}
+
+#전체 .둘째자식{
+  margin-top: 30px;
+  height: 200px;
+  padding: 20px;
+  background-color:lawngreen;
+  box-sizing: border-box;
+  position: relative;
+  
+}
+#전체 .둘째자식 .둘째손자{
+  background-color: indigo;
+  /* width: 100%; *//* //기본값, block요소*/
+  /* height: 100%; */
+  /* 자식은 부모의 padding에 침범하지 못한다 */
+  position: absolute;
+  left: 0px; top: 0px;
+  right: 0; bottom: 0;
+  width: 200px;
+  height: 100px;
+}
+
+
+#전체 .둘째자식{
+  margin-bottom: 50px;
+}
+#전체 .셋째자식{
+  margin-top: 30px;
+  background-color: #46C2CB;
+}
+#전체 .셋째자식>div{
+background-color: #FFBF00;
+width: 40%;
+margin: 0 5%; /* 상하 0  좌우 5% */
+float: left;
+}
+/* ol,ul의 자식요소는 li만 가능하다 */
+#전체 .셋째자식>div ol{
+  list-style-type:upper-roman;
+}
+#전체 .셋째자식>div ul{
+  list-style-type:circle ;
+}
+
+#전체 .셋째자식>div li{
+  border: 1px solid gray;
+}
+
+#전체 .넷째자식{
+  background-color:#FFBF00;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+#전체 .넷째자식 .넷째손자{
+  background-color: aquamarine;
+}
+#전체 .넷째자식 .넷째손자 dt{
+  background-color: cadetblue;
+}
+#전체 .넷째자식 .넷째손자 dd{
+  background-color: darkkhaki;
+}
