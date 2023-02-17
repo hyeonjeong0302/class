@@ -1,0 +1,15 @@
+@import url(basic.css);
+
+.container{
+  display: flex;
+  height: 500px;
+
+  align-items: stretch; /* 기본값 */
+  align-items: flex-start;
+  align-items: flex-end;
+  align-items: center;
+  align-items: baseline;
+}
+.item:nth-child(4){
+  font-size: 30px;
+}

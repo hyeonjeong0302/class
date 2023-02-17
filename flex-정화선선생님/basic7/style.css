@@ -1,0 +1,10 @@
+@import url(basic.css);
+
+.container{
+  display: flex;
+}
+.item{
+  /* flex-basis: auto; 기본값*/
+  /* flex-basis: 100px; */
+  width: 100px;
+}

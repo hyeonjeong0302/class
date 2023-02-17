@@ -1,0 +1,14 @@
+@import url(basic.css);
+
+.container{
+  display: flex;
+}
+.item{
+  flex-grow: 0; /* 기본값 */
+  width: 100px;
+  flex-grow: 1; 
+  /* 가지고 있는 넓이보다 커질수 있다 */
+}
+.item:nth-child(1){flex-grow: 1;}
+.item:nth-child(2){flex-grow: 2;}
+.item:nth-child(3){flex-grow: 1;}

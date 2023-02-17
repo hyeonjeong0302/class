@@ -1,0 +1,16 @@
+@import url(basic.css);
+
+.container{
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  
+ 
+}
+.item{
+  width: 30%;
+  flex:1 auto; /* flex: 1 1 auto */
+  /* flex-grow:1 넓이가 있다면 넓이보다 늘어날수 있다.
+  flex-shrink:1 넓이가 있다면 줄어들수 있다.
+  flex-basis:auto는 넓이값이 있다면 인식하겠다. */
+}
