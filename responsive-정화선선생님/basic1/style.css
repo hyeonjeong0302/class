@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+body{
+  background-color: #00425A;
+  color: #fff;
+}
+
+h1::before{content: "1. ";}
+h1::after{content: " - 기본";}
+
+/* 화면너비가 0~1280px:데스크탑 */
+@media (max-width:1280px){
+  /* 화면의 넓이값이 1280px보다 작으면
+  중괄호안의 내용이 실행됨 */
+  body{
+    background-color: #F55050;
+  }
+  h1::before{content: "2. ";}
+  h1::after{content: " - 1025px ~ 1280px";}
+}
+/* 화면너비가 0~1024px:노트북 */
+@media (max-width:1024px){
+  body{
+    background-color: #243763;
+  }
+  h1::before{content: "3. ";}
+  h1::after{content: " - 961px ~ 1024px";}
+}
+/* 화면너비가 0~960px:작은노트북 */
+@media (max-width:960px){
+  body{
+    background-color: #850000;
+  }
+  h1::before{content: "4. ";}
+  h1::after{content: " - 769px ~ 960px";}
+}
+/* 화면너비가 0~768px:테블릿 */
+@media (max-width:768px){
+  body{
+    background-color: #4B56D2;
+  }
+  h1::before{content: "5. ";}
+  h1::after{content: " - 577px ~ 768px";}
+}
+/* 화면너비가 0~576px:모바일 */
+@media (max-width:576px){
+  body{
+    background-color: #7B2869;
+  }
+  h1::before{content: "6. ";}
+  h1::after{content: " - 0px ~ 576px";}
+}
