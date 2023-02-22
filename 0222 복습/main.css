@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* popup_box */
+#popup_chk:checked~.popup {
+  display: block;
+}
+
+#popup_chk~.popup {
+  display: none;
+}
+
+.popup {
+  width: 300px;
+  height: 300px;
+  background-color: aqua;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.popup p {
+  width: 300px;
+  height: 200px;
+  border: 1px solid red;
+  color: black;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 5px;
+}
+
+.popup_close {
+  margin-left: 280px;
+  margin-top: 10px;
+}
+
+/* lnb_01 */
+.lnb_01,
+.lnb_02,
+.lnb_03,
+.lnb_04,
+.lnb_05 {
+  width: 1000px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.lnb_01 li {
+  width: 200px;
+  height: 50px;
+  float: left;
+  text-align: center;
+  line-height: 50px;
+  background-color: aqua;
+  color: blueviolet;
+  transition: all 0.3s;
+}
+
+.lnb_01 li:hover {
+  background-color: blue;
+  color: aliceblue;
+}
+
+/* lnb_02 */
+.lnb_02 li {
+
+  float: left;
+}
+
+.lnb_02 li a {
+  display: block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: aliceblue;
+  background-color: blue;
+  transition: all 0.3s;
+}
+
+.lnb_02 li a:hover {
+  background-color: brown;
+  color: yellowgreen;
+}
+
+/* lnb_03 */
+.lnb_03 ul {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
+}
+
+.lnb_03:hover ul {
+  height: 200px;
+}
+
+.lnb_03 li {
+  float: left;
+  width: 200px;
+  height: 50px;
+}
+
+.lnb_03 a {
+  display: block;
+  width: 200px;
+  height: 50px;
+  background-color: coral;
+  text-align: center;
+  color: darkgreen;
+  line-height: 50px;
+  transition: height 0.3s;
+}
+
+.lnb_03>li>a:hover {
+  background-color: cornflowerblue;
+}
+
+/* lnb_04 */
+.lnb_04 li {
+  float: left;
+  width: 200px;
+  height: 50px;
+}
+
+.lnb_04 a {
+  display: block;
+  width: 200px;
+  height: 50px;
+  background-color: crimson;
+  text-align: center;
+  line-height: 50px;
+  color: rgb(13, 14, 12);
+}
+
+.lnb_04 a:hover {
+  background-color: yellowgreen;
+  color: aliceblue;
+}
+
+.lnb_04 li {}
+
+.lnb_04 li a {}
+
+.lnb_04 li a {}
+
+.lnb_04 li ul {
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.lnb_04 li:hover ul {
+  height: 200px;
+}
+
+.lnb_04 li ul li {}
+
+.lnb_04 li ul li a {}
+
+
+/* lnb_05 */
+.lnb_05 li {
+  float: left;
+  width: 200px;
+  height: 50px;
+}
+
+.lnb_05 li a {
+  display: block;
+  width: 200px;
+  height: 50px;
+  background-color: darkgreen;
+  text-align: center;
+  line-height: 50px;
+}
+
+.lnb_05 li a:hover {
+  background-color: violet;
+  color: brown;
+}
+
+.lnb_05 li ul {
+  height: 0;
+  overflow: hidden;
+}
+
+.lnb_05 li:hover ul {
+  height: 200px;
+  float: left;
+}
+
+/* .lnb_05 ul li a {
+  float: left;
+} */
